@@ -1,0 +1,828 @@
+2024-11-05 16:58:47,130 - DataPipeline - INFO - Data pipeline logging is configured.
+{"taskName": null, "message": "Data pipeline logging is configured.", "time": "2024-11-05T21:58:47.132689+00:00"}
+2024-11-05 16:58:53,253 - DataPipeline - INFO - Starting data pipeline.
+{"taskName": null, "message": "Starting data pipeline.", "time": "2024-11-05T21:58:53.253795+00:00"}
+2024-11-05 16:58:53,253 - DataPipeline - INFO - Loading raw data and starting cleaning process.
+{"taskName": null, "message": "Loading raw data and starting cleaning process.", "time": "2024-11-05T21:58:53.253795+00:00"}
+2024-11-05 16:58:53,591 - DataPipeline - INFO - Raw data loaded successfully.
+{"taskName": null, "message": "Raw data loaded successfully.", "time": "2024-11-05T21:58:53.591541+00:00"}
+{"taskName": null, "message": "Starting full DataFrame cleaning process.", "time": "2024-11-05T21:58:53.607162+00:00"}
+{"taskName": null, "message": "Removed columns: ['weight', 'encounter_id', 'patient_nbr']", "time": "2024-11-05T21:58:53.645499+00:00"}
+{"taskName": null, "message": "No missing value handling strategy provided. Missing values are retained.", "time": "2024-11-05T21:58:53.658293+00:00"}
+{"taskName": null, "message": "Applied column-specific remapping to 'A1Cresult': {'Norm': 0, '>7': 1, '>8': 2, 'None': <NA>} and cast to 'Int64'", "time": "2024-11-05T21:58:53.694469+00:00"}
+{"taskName": null, "message": "Applied column-specific remapping to 'max_glu_serum': {'Norm': 0, '>200': 1, '>300': 2, 'None': <NA>} and cast to 'Int64'", "time": "2024-11-05T21:58:53.722821+00:00"}
+{"taskName": null, "message": "Applied column-specific remapping to 'readmitted': {'NO': 0, '<30': 1, '>30': 2} and cast to 'Int64'", "time": "2024-11-05T21:58:53.761801+00:00"}
+{"taskName": null, "message": "Applied global remapping with adjusted values: {'': nan, 'N/A': nan, 'None': nan, 'n/a': nan, 'missing': nan, 'na': nan, 'NA': nan, 'none': nan, 'NAN': nan, 'nan': nan, 'NULL': nan, 'null': nan, '-': nan, '--': nan, '?': nan, 'not available': nan, 'not applicable': nan, 'not specified': nan, 'not known': nan, 'unavailable': nan, 'unknown': nan, 'no data': nan}", "time": "2024-11-05T21:58:54.436188+00:00"}
+{"taskName": null, "message": "Identified string-based numbers.", "time": "2024-11-05T21:58:59.735369+00:00"}
+{"taskName": null, "message": "Number-like string standardization completed.", "time": "2024-11-05T21:59:02.939927+00:00"}
+{"taskName": null, "message": "Word-to-number conversion disabled.", "time": "2024-11-05T21:59:02.939927+00:00"}
+{"taskName": null, "message": "Numerical standardization completed.", "time": "2024-11-05T21:59:03.287897+00:00"}
+{"taskName": null, "message": "No text replacement modes specified. Skipping.", "time": "2024-11-05T21:59:03.341905+00:00"}
+{"taskName": null, "message": "Text standardization completed.", "time": "2024-11-05T21:59:07.737123+00:00"}
+{"taskName": null, "message": "Whitespace handling completed.", "time": "2024-11-05T21:59:25.795081+00:00"}
+{"taskName": null, "message": "Casted column 'race' to 'category'.", "time": "2024-11-05T21:59:25.810691+00:00"}
+{"taskName": null, "message": "Casted column 'gender' to 'category'.", "time": "2024-11-05T21:59:25.824222+00:00"}
+{"taskName": null, "message": "Casted column 'age' to 'category'.", "time": "2024-11-05T21:59:25.832159+00:00"}
+{"taskName": null, "message": "Casted column 'admission_type_id' to 'category'.", "time": "2024-11-05T21:59:25.834504+00:00"}
+{"taskName": null, "message": "Casted column 'discharge_disposition_id' to 'category'.", "time": "2024-11-05T21:59:25.837496+00:00"}
+{"taskName": null, "message": "Casted column 'admission_source_id' to 'category'.", "time": "2024-11-05T21:59:25.838934+00:00"}
+{"taskName": null, "message": "Casted column 'payer_code' to 'category'.", "time": "2024-11-05T21:59:25.851008+00:00"}
+{"taskName": null, "message": "Casted column 'medical_specialty' to 'category'.", "time": "2024-11-05T21:59:25.855638+00:00"}
+{"taskName": null, "message": "Casted column 'diag_1' to 'category'.", "time": "2024-11-05T21:59:25.872314+00:00"}
+{"taskName": null, "message": "Casted column 'diag_2' to 'category'.", "time": "2024-11-05T21:59:25.889025+00:00"}
+{"taskName": null, "message": "Casted column 'diag_3' to 'category'.", "time": "2024-11-05T21:59:25.905696+00:00"}
+{"taskName": null, "message": "Casted column 'max_glu_serum' to 'category'.", "time": "2024-11-05T21:59:25.917471+00:00"}
+{"taskName": null, "message": "Casted column 'A1Cresult' to 'category'.", "time": "2024-11-05T21:59:25.919466+00:00"}
+{"taskName": null, "message": "Casted column 'metformin' to 'category'.", "time": "2024-11-05T21:59:25.922388+00:00"}
+{"taskName": null, "message": "Casted column 'repaglinide' to 'category'.", "time": "2024-11-05T21:59:25.933332+00:00"}
+{"taskName": null, "message": "Casted column 'nateglinide' to 'category'.", "time": "2024-11-05T21:59:25.938667+00:00"}
+{"taskName": null, "message": "Casted column 'chlorpropamide' to 'category'.", "time": "2024-11-05T21:59:25.939052+00:00"}
+{"taskName": null, "message": "Casted column 'glimepiride' to 'category'.", "time": "2024-11-05T21:59:25.951820+00:00"}
+{"taskName": null, "message": "Casted column 'acetohexamide' to 'category'.", "time": "2024-11-05T21:59:25.955713+00:00"}
+{"taskName": null, "message": "Casted column 'glipizide' to 'category'.", "time": "2024-11-05T21:59:25.963681+00:00"}
+{"taskName": null, "message": "Casted column 'glyburide' to 'category'.", "time": "2024-11-05T21:59:25.967050+00:00"}
+{"taskName": null, "message": "Casted column 'tolbutamide' to 'category'.", "time": "2024-11-05T21:59:25.972412+00:00"}
+{"taskName": null, "message": "Casted column 'pioglitazone' to 'category'.", "time": "2024-11-05T21:59:25.981567+00:00"}
+{"taskName": null, "message": "Casted column 'rosiglitazone' to 'category'.", "time": "2024-11-05T21:59:25.982392+00:00"}
+{"taskName": null, "message": "Casted column 'acarbose' to 'category'.", "time": "2024-11-05T21:59:25.989087+00:00"}
+{"taskName": null, "message": "Casted column 'miglitol' to 'category'.", "time": "2024-11-05T21:59:25.989087+00:00"}
+{"taskName": null, "message": "Casted column 'troglitazone' to 'category'.", "time": "2024-11-05T21:59:26.003342+00:00"}
+{"taskName": null, "message": "Casted column 'tolazamide' to 'category'.", "time": "2024-11-05T21:59:26.005738+00:00"}
+{"taskName": null, "message": "Casted column 'examide' to 'category'.", "time": "2024-11-05T21:59:26.015545+00:00"}
+{"taskName": null, "message": "Casted column 'citoglipton' to 'category'.", "time": "2024-11-05T21:59:26.016298+00:00"}
+{"taskName": null, "message": "Casted column 'insulin' to 'category'.", "time": "2024-11-05T21:59:26.027529+00:00"}
+{"taskName": null, "message": "Casted column 'glyburide-metformin' to 'category'.", "time": "2024-11-05T21:59:26.033397+00:00"}
+{"taskName": null, "message": "Casted column 'glipizide-metformin' to 'category'.", "time": "2024-11-05T21:59:26.039117+00:00"}
+{"taskName": null, "message": "Casted column 'glimepiride-pioglitazone' to 'category'.", "time": "2024-11-05T21:59:26.045349+00:00"}
+{"taskName": null, "message": "Casted column 'metformin-rosiglitazone' to 'category'.", "time": "2024-11-05T21:59:26.050458+00:00"}
+{"taskName": null, "message": "Casted column 'metformin-pioglitazone' to 'category'.", "time": "2024-11-05T21:59:26.055784+00:00"}
+{"taskName": null, "message": "Casted column 'change' to 'category'.", "time": "2024-11-05T21:59:26.063382+00:00"}
+{"taskName": null, "message": "Casted column 'diabetesMed' to 'category'.", "time": "2024-11-05T21:59:26.067371+00:00"}
+{"taskName": null, "message": "Casted column 'readmitted' to 'category'.", "time": "2024-11-05T21:59:26.071493+00:00"}
+{"taskName": null, "message": "Column 'time_in_hospital' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-05T21:59:26.071493+00:00"}
+{"taskName": null, "message": "Column 'num_lab_procedures' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-05T21:59:26.072447+00:00"}
+{"taskName": null, "message": "Column 'num_procedures' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-05T21:59:26.072447+00:00"}
+{"taskName": null, "message": "Column 'num_medications' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-05T21:59:26.072447+00:00"}
+{"taskName": null, "message": "Column 'number_outpatient' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-05T21:59:26.072447+00:00"}
+{"taskName": null, "message": "Column 'number_emergency' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-05T21:59:26.072447+00:00"}
+{"taskName": null, "message": "Column 'number_inpatient' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-05T21:59:26.072447+00:00"}
+{"taskName": null, "message": "Column 'number_diagnoses' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-05T21:59:26.072447+00:00"}
+{"taskName": null, "message": "Column dtype handling complete.", "time": "2024-11-05T21:59:26.072447+00:00"}
+{"taskName": null, "message": "DataFrame cleaning process completed successfully.", "time": "2024-11-05T21:59:26.072447+00:00"}
+2024-11-05 16:59:26,078 - DataPipeline - INFO - Data cleaning completed.
+{"taskName": null, "message": "Data cleaning completed.", "time": "2024-11-05T21:59:26.078137+00:00"}
+2024-11-05 16:59:26,084 - DataPipeline - INFO - Cleaned data saved at data\processed\df_cleaned.pkl.
+{"taskName": null, "message": "Cleaned data saved at data\\processed\\df_cleaned.pkl.", "time": "2024-11-05T21:59:26.084122+00:00"}
+2024-11-05 16:59:26,089 - DataPipeline - INFO - Loading key file.
+{"taskName": null, "message": "Loading key file.", "time": "2024-11-05T21:59:26.089132+00:00"}
+2024-11-05 16:59:26,105 - DataPipeline - INFO - Key file processed successfully.
+{"taskName": null, "message": "Key file processed successfully.", "time": "2024-11-05T21:59:26.105810+00:00"}
+2024-11-05 16:59:26,105 - DataPipeline - INFO - Data pipeline completed successfully.
+{"taskName": null, "message": "Data pipeline completed successfully.", "time": "2024-11-05T21:59:26.105810+00:00"}
+2024-11-05 17:10:54,796 - DataPipeline - INFO - Data pipeline logging is configured.
+{"taskName": null, "message": "Data pipeline logging is configured.", "time": "2024-11-05T22:10:54.796205+00:00"}
+2024-11-05 17:10:54,796 - DataPipeline - INFO - Starting data pipeline.
+{"taskName": null, "message": "Starting data pipeline.", "time": "2024-11-05T22:10:54.796205+00:00"}
+2024-11-05 17:10:54,796 - DataPipeline - INFO - Loading cleaned data from saved file.
+{"taskName": null, "message": "Loading cleaned data from saved file.", "time": "2024-11-05T22:10:54.796205+00:00"}
+2024-11-05 17:10:54,816 - DataPipeline - INFO - Loading key file.
+{"taskName": null, "message": "Loading key file.", "time": "2024-11-05T22:10:54.816604+00:00"}
+2024-11-05 17:10:54,821 - DataPipeline - INFO - Key file processed successfully.
+{"taskName": null, "message": "Key file processed successfully.", "time": "2024-11-05T22:10:54.821783+00:00"}
+2024-11-05 17:10:54,821 - DataPipeline - INFO - Data pipeline completed successfully.
+{"taskName": null, "message": "Data pipeline completed successfully.", "time": "2024-11-05T22:10:54.822778+00:00"}
+2024-11-05 17:14:56,545 - DataPipeline - INFO - Data pipeline logging is configured.
+{"taskName": null, "message": "Data pipeline logging is configured.", "time": "2024-11-05T22:14:56.545863+00:00"}
+2024-11-05 17:14:56,545 - DataPipeline - INFO - Starting data pipeline.
+{"taskName": null, "message": "Starting data pipeline.", "time": "2024-11-05T22:14:56.545863+00:00"}
+2024-11-05 17:14:56,545 - DataPipeline - INFO - Loading cleaned data from saved file.
+{"taskName": null, "message": "Loading cleaned data from saved file.", "time": "2024-11-05T22:14:56.545863+00:00"}
+2024-11-05 17:14:56,566 - DataPipeline - INFO - Loading key file.
+{"taskName": null, "message": "Loading key file.", "time": "2024-11-05T22:14:56.566277+00:00"}
+2024-11-05 17:14:56,570 - DataPipeline - INFO - Key file processed successfully.
+{"taskName": null, "message": "Key file processed successfully.", "time": "2024-11-05T22:14:56.570548+00:00"}
+2024-11-05 17:14:56,570 - DataPipeline - INFO - Data pipeline completed successfully.
+{"taskName": null, "message": "Data pipeline completed successfully.", "time": "2024-11-05T22:14:56.570548+00:00"}
+2024-11-05 17:15:23,678 - DataPipeline - INFO - Data pipeline logging is configured.
+{"taskName": null, "message": "Data pipeline logging is configured.", "time": "2024-11-05T22:15:23.678312+00:00"}
+2024-11-05 17:15:23,678 - DataPipeline - INFO - Starting data pipeline.
+{"taskName": null, "message": "Starting data pipeline.", "time": "2024-11-05T22:15:23.678312+00:00"}
+2024-11-05 17:15:23,678 - DataPipeline - INFO - Loading raw data and starting cleaning process.
+{"taskName": null, "message": "Loading raw data and starting cleaning process.", "time": "2024-11-05T22:15:23.678312+00:00"}
+2024-11-05 17:15:24,012 - DataPipeline - INFO - Raw data loaded successfully.
+{"taskName": null, "message": "Raw data loaded successfully.", "time": "2024-11-05T22:15:24.012921+00:00"}
+{"taskName": null, "message": "Starting full DataFrame cleaning process.", "time": "2024-11-05T22:15:24.037877+00:00"}
+{"taskName": null, "message": "Removed columns: ['weight', 'encounter_id', 'patient_nbr']", "time": "2024-11-05T22:15:24.066478+00:00"}
+{"taskName": null, "message": "No missing value handling strategy provided. Missing values are retained.", "time": "2024-11-05T22:15:24.073459+00:00"}
+{"taskName": null, "message": "Applied column-specific remapping to 'A1Cresult': {'Norm': 0, '>7': 1, '>8': 2, 'None': <NA>} and cast to 'Int64'", "time": "2024-11-05T22:15:24.100765+00:00"}
+{"taskName": null, "message": "Applied column-specific remapping to 'max_glu_serum': {'Norm': 0, '>200': 1, '>300': 2, 'None': <NA>} and cast to 'Int64'", "time": "2024-11-05T22:15:24.115880+00:00"}
+{"taskName": null, "message": "Applied column-specific remapping to 'readmitted': {'NO': 0, '<30': 1, '>30': 2} and cast to 'Int64'", "time": "2024-11-05T22:15:24.154857+00:00"}
+{"taskName": null, "message": "Applied global remapping with adjusted values: {'': nan, 'N/A': nan, 'None': nan, 'n/a': nan, 'missing': nan, 'na': nan, 'NA': nan, 'none': nan, 'NAN': nan, 'nan': nan, 'NULL': nan, 'null': nan, '-': nan, '--': nan, '?': nan, 'not available': nan, 'not applicable': nan, 'not specified': nan, 'not known': nan, 'unavailable': nan, 'unknown': nan, 'no data': nan}", "time": "2024-11-05T22:15:24.661121+00:00"}
+{"taskName": null, "message": "Identified string-based numbers.", "time": "2024-11-05T22:15:26.400539+00:00"}
+{"taskName": null, "message": "Number-like string standardization completed.", "time": "2024-11-05T22:15:27.057341+00:00"}
+{"taskName": null, "message": "Word-to-number conversion disabled.", "time": "2024-11-05T22:15:27.057341+00:00"}
+{"taskName": null, "message": "Numerical standardization completed.", "time": "2024-11-05T22:15:27.384575+00:00"}
+{"taskName": null, "message": "No text replacement modes specified. Skipping.", "time": "2024-11-05T22:15:27.436547+00:00"}
+{"taskName": null, "message": "Text standardization completed.", "time": "2024-11-05T22:15:28.477155+00:00"}
+{"taskName": null, "message": "Whitespace handling completed.", "time": "2024-11-05T22:15:32.585775+00:00"}
+{"taskName": null, "message": "Casted column 'race' to 'category'.", "time": "2024-11-05T22:15:32.598740+00:00"}
+{"taskName": null, "message": "Casted column 'gender' to 'category'.", "time": "2024-11-05T22:15:32.604725+00:00"}
+{"taskName": null, "message": "Casted column 'age' to 'category'.", "time": "2024-11-05T22:15:32.609711+00:00"}
+{"taskName": null, "message": "Casted column 'admission_type_id' to 'category'.", "time": "2024-11-05T22:15:32.611707+00:00"}
+{"taskName": null, "message": "Casted column 'discharge_disposition_id' to 'category'.", "time": "2024-11-05T22:15:32.612704+00:00"}
+{"taskName": null, "message": "Casted column 'admission_source_id' to 'category'.", "time": "2024-11-05T22:15:32.614698+00:00"}
+{"taskName": null, "message": "Casted column 'payer_code' to 'category'.", "time": "2024-11-05T22:15:32.623674+00:00"}
+{"taskName": null, "message": "Casted column 'medical_specialty' to 'category'.", "time": "2024-11-05T22:15:32.633909+00:00"}
+{"taskName": null, "message": "Casted column 'diag_1' to 'category'.", "time": "2024-11-05T22:15:32.646649+00:00"}
+{"taskName": null, "message": "Casted column 'diag_2' to 'category'.", "time": "2024-11-05T22:15:32.660337+00:00"}
+{"taskName": null, "message": "Casted column 'diag_3' to 'category'.", "time": "2024-11-05T22:15:32.673578+00:00"}
+{"taskName": null, "message": "Casted column 'max_glu_serum' to 'category'.", "time": "2024-11-05T22:15:32.673578+00:00"}
+{"taskName": null, "message": "Casted column 'A1Cresult' to 'category'.", "time": "2024-11-05T22:15:32.676212+00:00"}
+{"taskName": null, "message": "Casted column 'metformin' to 'category'.", "time": "2024-11-05T22:15:32.681026+00:00"}
+{"taskName": null, "message": "Casted column 'repaglinide' to 'category'.", "time": "2024-11-05T22:15:32.687011+00:00"}
+{"taskName": null, "message": "Casted column 'nateglinide' to 'category'.", "time": "2024-11-05T22:15:32.691631+00:00"}
+{"taskName": null, "message": "Casted column 'chlorpropamide' to 'category'.", "time": "2024-11-05T22:15:32.695911+00:00"}
+{"taskName": null, "message": "Casted column 'glimepiride' to 'category'.", "time": "2024-11-05T22:15:32.701305+00:00"}
+{"taskName": null, "message": "Casted column 'acetohexamide' to 'category'.", "time": "2024-11-05T22:15:32.706005+00:00"}
+{"taskName": null, "message": "Casted column 'glipizide' to 'category'.", "time": "2024-11-05T22:15:32.711345+00:00"}
+{"taskName": null, "message": "Casted column 'glyburide' to 'category'.", "time": "2024-11-05T22:15:32.716650+00:00"}
+{"taskName": null, "message": "Casted column 'tolbutamide' to 'category'.", "time": "2024-11-05T22:15:32.721637+00:00"}
+{"taskName": null, "message": "Casted column 'pioglitazone' to 'category'.", "time": "2024-11-05T22:15:32.726389+00:00"}
+{"taskName": null, "message": "Casted column 'rosiglitazone' to 'category'.", "time": "2024-11-05T22:15:32.734233+00:00"}
+{"taskName": null, "message": "Casted column 'acarbose' to 'category'.", "time": "2024-11-05T22:15:32.739521+00:00"}
+{"taskName": null, "message": "Casted column 'miglitol' to 'category'.", "time": "2024-11-05T22:15:32.744206+00:00"}
+{"taskName": null, "message": "Casted column 'troglitazone' to 'category'.", "time": "2024-11-05T22:15:32.748617+00:00"}
+{"taskName": null, "message": "Casted column 'tolazamide' to 'category'.", "time": "2024-11-05T22:15:32.753604+00:00"}
+{"taskName": null, "message": "Casted column 'examide' to 'category'.", "time": "2024-11-05T22:15:32.759223+00:00"}
+{"taskName": null, "message": "Casted column 'citoglipton' to 'category'.", "time": "2024-11-05T22:15:32.764317+00:00"}
+{"taskName": null, "message": "Casted column 'insulin' to 'category'.", "time": "2024-11-05T22:15:32.769154+00:00"}
+{"taskName": null, "message": "Casted column 'glyburide-metformin' to 'category'.", "time": "2024-11-05T22:15:32.774453+00:00"}
+{"taskName": null, "message": "Casted column 'glipizide-metformin' to 'category'.", "time": "2024-11-05T22:15:32.778515+00:00"}
+{"taskName": null, "message": "Casted column 'glimepiride-pioglitazone' to 'category'.", "time": "2024-11-05T22:15:32.783941+00:00"}
+{"taskName": null, "message": "Casted column 'metformin-rosiglitazone' to 'category'.", "time": "2024-11-05T22:15:32.789248+00:00"}
+{"taskName": null, "message": "Casted column 'metformin-pioglitazone' to 'category'.", "time": "2024-11-05T22:15:32.794448+00:00"}
+{"taskName": null, "message": "Casted column 'change' to 'category'.", "time": "2024-11-05T22:15:32.799470+00:00"}
+{"taskName": null, "message": "Casted column 'diabetesMed' to 'category'.", "time": "2024-11-05T22:15:32.804457+00:00"}
+{"taskName": null, "message": "Casted column 'readmitted' to 'category'.", "time": "2024-11-05T22:15:32.807382+00:00"}
+{"taskName": null, "message": "Column 'time_in_hospital' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-05T22:15:32.807611+00:00"}
+{"taskName": null, "message": "Column 'num_lab_procedures' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-05T22:15:32.807689+00:00"}
+{"taskName": null, "message": "Column 'num_procedures' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-05T22:15:32.807689+00:00"}
+{"taskName": null, "message": "Column 'num_medications' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-05T22:15:32.807689+00:00"}
+{"taskName": null, "message": "Column 'number_outpatient' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-05T22:15:32.807689+00:00"}
+{"taskName": null, "message": "Column 'number_emergency' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-05T22:15:32.807689+00:00"}
+{"taskName": null, "message": "Column 'number_inpatient' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-05T22:15:32.807689+00:00"}
+{"taskName": null, "message": "Column 'number_diagnoses' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-05T22:15:32.808686+00:00"}
+{"taskName": null, "message": "Column dtype handling complete.", "time": "2024-11-05T22:15:32.808686+00:00"}
+{"taskName": null, "message": "DataFrame cleaning process completed successfully.", "time": "2024-11-05T22:15:32.808686+00:00"}
+2024-11-05 17:15:32,809 - DataPipeline - INFO - Data cleaning completed.
+{"taskName": null, "message": "Data cleaning completed.", "time": "2024-11-05T22:15:32.809144+00:00"}
+2024-11-05 17:15:32,813 - DataPipeline - INFO - Cleaned data saved at data\processed\df_cleaned.pkl.
+{"taskName": null, "message": "Cleaned data saved at data\\processed\\df_cleaned.pkl.", "time": "2024-11-05T22:15:32.813817+00:00"}
+2024-11-05 17:15:32,821 - DataPipeline - INFO - Loading key file.
+{"taskName": null, "message": "Loading key file.", "time": "2024-11-05T22:15:32.821003+00:00"}
+2024-11-05 17:15:32,823 - DataPipeline - INFO - Key file processed successfully.
+{"taskName": null, "message": "Key file processed successfully.", "time": "2024-11-05T22:15:32.823875+00:00"}
+2024-11-05 17:15:32,823 - DataPipeline - INFO - Data pipeline completed successfully.
+{"taskName": null, "message": "Data pipeline completed successfully.", "time": "2024-11-05T22:15:32.823875+00:00"}
+2024-11-05 17:29:31,416 - DataPipeline - INFO - Data pipeline logging is configured.
+{"taskName": null, "message": "Data pipeline logging is configured.", "time": "2024-11-05T22:29:31.416782+00:00"}
+2024-11-05 17:29:31,416 - DataPipeline - INFO - Starting data pipeline.
+{"taskName": null, "message": "Starting data pipeline.", "time": "2024-11-05T22:29:31.416782+00:00"}
+2024-11-05 17:29:31,416 - DataPipeline - INFO - Loading cleaned data from saved file.
+{"taskName": null, "message": "Loading cleaned data from saved file.", "time": "2024-11-05T22:29:31.416782+00:00"}
+2024-11-05 17:29:31,436 - DataPipeline - INFO - Loading key file.
+{"taskName": null, "message": "Loading key file.", "time": "2024-11-05T22:29:31.436997+00:00"}
+2024-11-05 17:29:31,436 - DataPipeline - INFO - Key file processed successfully.
+{"taskName": null, "message": "Key file processed successfully.", "time": "2024-11-05T22:29:31.436997+00:00"}
+2024-11-05 17:29:31,436 - DataPipeline - INFO - Data pipeline completed successfully.
+{"taskName": null, "message": "Data pipeline completed successfully.", "time": "2024-11-05T22:29:31.436997+00:00"}
+2024-11-05 17:35:04,683 - DataPipeline - INFO - Data pipeline logging is configured.
+{"taskName": null, "message": "Data pipeline logging is configured.", "time": "2024-11-05T22:35:04.683158+00:00"}
+2024-11-05 17:35:04,683 - DataPipeline - INFO - Starting data pipeline.
+{"taskName": null, "message": "Starting data pipeline.", "time": "2024-11-05T22:35:04.683158+00:00"}
+2024-11-05 17:35:04,683 - DataPipeline - INFO - Loading cleaned data from saved file.
+{"taskName": null, "message": "Loading cleaned data from saved file.", "time": "2024-11-05T22:35:04.683158+00:00"}
+2024-11-05 17:35:04,701 - DataPipeline - INFO - Loading key file.
+{"taskName": null, "message": "Loading key file.", "time": "2024-11-05T22:35:04.701508+00:00"}
+2024-11-05 17:35:04,707 - DataPipeline - INFO - Key file processed successfully.
+{"taskName": null, "message": "Key file processed successfully.", "time": "2024-11-05T22:35:04.707264+00:00"}
+2024-11-05 17:35:04,708 - DataPipeline - INFO - Data pipeline completed successfully.
+{"taskName": null, "message": "Data pipeline completed successfully.", "time": "2024-11-05T22:35:04.708192+00:00"}
+2024-11-05 17:41:36,929 - DataPipeline - INFO - Data pipeline logging is configured.
+{"taskName": null, "message": "Data pipeline logging is configured.", "time": "2024-11-05T22:41:36.929620+00:00"}
+2024-11-05 17:41:36,929 - DataPipeline - INFO - Starting data pipeline.
+{"taskName": null, "message": "Starting data pipeline.", "time": "2024-11-05T22:41:36.929620+00:00"}
+2024-11-05 17:41:36,929 - DataPipeline - INFO - Loading cleaned data from saved file.
+{"taskName": null, "message": "Loading cleaned data from saved file.", "time": "2024-11-05T22:41:36.929620+00:00"}
+2024-11-05 17:41:36,929 - DataPipeline - INFO - Loading key file.
+{"taskName": null, "message": "Loading key file.", "time": "2024-11-05T22:41:36.929620+00:00"}
+2024-11-05 17:41:36,948 - DataPipeline - INFO - Key file processed successfully.
+{"taskName": null, "message": "Key file processed successfully.", "time": "2024-11-05T22:41:36.949143+00:00"}
+2024-11-05 17:41:36,949 - DataPipeline - INFO - Data pipeline completed successfully.
+{"taskName": null, "message": "Data pipeline completed successfully.", "time": "2024-11-05T22:41:36.949143+00:00"}
+2024-11-05 17:46:07,830 - DataPipeline - INFO - Data pipeline logging is configured.
+{"taskName": null, "message": "Data pipeline logging is configured.", "time": "2024-11-05T22:46:07.830364+00:00"}
+2024-11-05 17:46:07,830 - DataPipeline - INFO - Starting data pipeline.
+{"taskName": null, "message": "Starting data pipeline.", "time": "2024-11-05T22:46:07.830364+00:00"}
+2024-11-05 17:46:07,830 - DataPipeline - INFO - Loading cleaned data from saved file.
+{"taskName": null, "message": "Loading cleaned data from saved file.", "time": "2024-11-05T22:46:07.830364+00:00"}
+2024-11-05 17:46:07,848 - DataPipeline - INFO - Loading key file.
+{"taskName": null, "message": "Loading key file.", "time": "2024-11-05T22:46:07.848421+00:00"}
+2024-11-05 17:46:07,864 - DataPipeline - INFO - Key file processed successfully.
+{"taskName": null, "message": "Key file processed successfully.", "time": "2024-11-05T22:46:07.864667+00:00"}
+2024-11-05 17:46:07,864 - DataPipeline - INFO - Data pipeline completed successfully.
+{"taskName": null, "message": "Data pipeline completed successfully.", "time": "2024-11-05T22:46:07.864667+00:00"}
+2024-11-05 17:50:32,909 - DataPipeline - INFO - Data pipeline logging is configured.
+{"taskName": null, "message": "Data pipeline logging is configured.", "time": "2024-11-05T22:50:32.909549+00:00"}
+2024-11-05 17:50:32,909 - DataPipeline - INFO - Starting data pipeline.
+{"taskName": null, "message": "Starting data pipeline.", "time": "2024-11-05T22:50:32.909549+00:00"}
+2024-11-05 17:50:32,909 - DataPipeline - INFO - Loading raw data and starting cleaning process.
+{"taskName": null, "message": "Loading raw data and starting cleaning process.", "time": "2024-11-05T22:50:32.909549+00:00"}
+2024-11-05 17:50:33,259 - DataPipeline - INFO - Raw data loaded successfully.
+{"taskName": null, "message": "Raw data loaded successfully.", "time": "2024-11-05T22:50:33.259246+00:00"}
+{"taskName": null, "message": "Starting full DataFrame cleaning process.", "time": "2024-11-05T22:50:33.274615+00:00"}
+{"taskName": null, "message": "Removed columns: ['weight', 'encounter_id', 'patient_nbr']", "time": "2024-11-05T22:50:33.295529+00:00"}
+{"taskName": null, "message": "No missing value handling strategy provided. Missing values are retained.", "time": "2024-11-05T22:50:33.310973+00:00"}
+{"taskName": null, "message": "Applied column-specific remapping to 'A1Cresult': {'Norm': 0, '>7': 1, '>8': 2, 'None': <NA>} and cast to 'Int64'", "time": "2024-11-05T22:50:33.341071+00:00"}
+{"taskName": null, "message": "Applied column-specific remapping to 'max_glu_serum': {'Norm': 0, '>200': 1, '>300': 2, 'None': <NA>} and cast to 'Int64'", "time": "2024-11-05T22:50:33.365312+00:00"}
+{"taskName": null, "message": "Applied column-specific remapping to 'readmitted': {'NO': 0, '<30': 1, '>30': 2} and cast to 'Int64'", "time": "2024-11-05T22:50:33.396667+00:00"}
+{"taskName": null, "message": "Applied global remapping with adjusted values: {'': nan, 'N/A': nan, 'None': nan, 'n/a': nan, 'missing': nan, 'na': nan, 'NA': nan, 'none': nan, 'NAN': nan, 'nan': nan, 'NULL': nan, 'null': nan, '-': nan, '--': nan, '?': nan, 'not available': nan, 'not applicable': nan, 'not specified': nan, 'not known': nan, 'unavailable': nan, 'unknown': nan, 'no data': nan}", "time": "2024-11-05T22:50:33.907871+00:00"}
+{"taskName": null, "message": "Identified string-based numbers.", "time": "2024-11-05T22:50:35.594364+00:00"}
+{"taskName": null, "message": "Number-like string standardization completed.", "time": "2024-11-05T22:50:36.283272+00:00"}
+{"taskName": null, "message": "Word-to-number conversion disabled.", "time": "2024-11-05T22:50:36.283272+00:00"}
+{"taskName": null, "message": "Numerical standardization completed.", "time": "2024-11-05T22:50:36.619430+00:00"}
+{"taskName": null, "message": "No text replacement modes specified. Skipping.", "time": "2024-11-05T22:50:36.661375+00:00"}
+{"taskName": null, "message": "Text standardization completed.", "time": "2024-11-05T22:50:37.696270+00:00"}
+{"taskName": null, "message": "Whitespace handling completed.", "time": "2024-11-05T22:50:41.790570+00:00"}
+{"taskName": null, "message": "Casted column 'race' to 'category'.", "time": "2024-11-05T22:50:41.814569+00:00"}
+{"taskName": null, "message": "Casted column 'gender' to 'category'.", "time": "2024-11-05T22:50:41.822160+00:00"}
+{"taskName": null, "message": "Casted column 'age' to 'category'.", "time": "2024-11-05T22:50:41.827483+00:00"}
+{"taskName": null, "message": "Casted column 'admission_type_id' to 'category'.", "time": "2024-11-05T22:50:41.828481+00:00"}
+{"taskName": null, "message": "Casted column 'discharge_disposition_id' to 'category'.", "time": "2024-11-05T22:50:41.830866+00:00"}
+{"taskName": null, "message": "Casted column 'admission_source_id' to 'category'.", "time": "2024-11-05T22:50:41.832860+00:00"}
+{"taskName": null, "message": "Casted column 'payer_code' to 'category'.", "time": "2024-11-05T22:50:41.841357+00:00"}
+{"taskName": null, "message": "Casted column 'medical_specialty' to 'category'.", "time": "2024-11-05T22:50:41.850985+00:00"}
+{"taskName": null, "message": "Casted column 'diag_1' to 'category'.", "time": "2024-11-05T22:50:41.863835+00:00"}
+{"taskName": null, "message": "Casted column 'diag_2' to 'category'.", "time": "2024-11-05T22:50:41.876658+00:00"}
+{"taskName": null, "message": "Casted column 'diag_3' to 'category'.", "time": "2024-11-05T22:50:41.890260+00:00"}
+{"taskName": null, "message": "Casted column 'max_glu_serum' to 'category'.", "time": "2024-11-05T22:50:41.890260+00:00"}
+{"taskName": null, "message": "Casted column 'A1Cresult' to 'category'.", "time": "2024-11-05T22:50:41.893700+00:00"}
+{"taskName": null, "message": "Casted column 'metformin' to 'category'.", "time": "2024-11-05T22:50:41.898445+00:00"}
+{"taskName": null, "message": "Casted column 'repaglinide' to 'category'.", "time": "2024-11-05T22:50:41.904649+00:00"}
+{"taskName": null, "message": "Casted column 'nateglinide' to 'category'.", "time": "2024-11-05T22:50:41.909549+00:00"}
+{"taskName": null, "message": "Casted column 'chlorpropamide' to 'category'.", "time": "2024-11-05T22:50:41.913594+00:00"}
+{"taskName": null, "message": "Casted column 'glimepiride' to 'category'.", "time": "2024-11-05T22:50:41.919599+00:00"}
+{"taskName": null, "message": "Casted column 'acetohexamide' to 'category'.", "time": "2024-11-05T22:50:41.924468+00:00"}
+{"taskName": null, "message": "Casted column 'glipizide' to 'category'.", "time": "2024-11-05T22:50:41.929660+00:00"}
+{"taskName": null, "message": "Casted column 'glyburide' to 'category'.", "time": "2024-11-05T22:50:41.934648+00:00"}
+{"taskName": null, "message": "Casted column 'tolbutamide' to 'category'.", "time": "2024-11-05T22:50:41.940008+00:00"}
+{"taskName": null, "message": "Casted column 'pioglitazone' to 'category'.", "time": "2024-11-05T22:50:41.944165+00:00"}
+{"taskName": null, "message": "Casted column 'rosiglitazone' to 'category'.", "time": "2024-11-05T22:50:41.949859+00:00"}
+{"taskName": null, "message": "Casted column 'acarbose' to 'category'.", "time": "2024-11-05T22:50:41.954668+00:00"}
+{"taskName": null, "message": "Casted column 'miglitol' to 'category'.", "time": "2024-11-05T22:50:41.959688+00:00"}
+{"taskName": null, "message": "Casted column 'troglitazone' to 'category'.", "time": "2024-11-05T22:50:41.964551+00:00"}
+{"taskName": null, "message": "Casted column 'tolazamide' to 'category'.", "time": "2024-11-05T22:50:41.969538+00:00"}
+{"taskName": null, "message": "Casted column 'examide' to 'category'.", "time": "2024-11-05T22:50:41.974056+00:00"}
+{"taskName": null, "message": "Casted column 'citoglipton' to 'category'.", "time": "2024-11-05T22:50:41.979119+00:00"}
+{"taskName": null, "message": "Casted column 'insulin' to 'category'.", "time": "2024-11-05T22:50:41.984145+00:00"}
+{"taskName": null, "message": "Casted column 'glyburide-metformin' to 'category'.", "time": "2024-11-05T22:50:41.989620+00:00"}
+{"taskName": null, "message": "Casted column 'glipizide-metformin' to 'category'.", "time": "2024-11-05T22:50:41.993709+00:00"}
+{"taskName": null, "message": "Casted column 'glimepiride-pioglitazone' to 'category'.", "time": "2024-11-05T22:50:41.999214+00:00"}
+{"taskName": null, "message": "Casted column 'metformin-rosiglitazone' to 'category'.", "time": "2024-11-05T22:50:42.004597+00:00"}
+{"taskName": null, "message": "Casted column 'metformin-pioglitazone' to 'category'.", "time": "2024-11-05T22:50:42.009949+00:00"}
+{"taskName": null, "message": "Casted column 'change' to 'category'.", "time": "2024-11-05T22:50:42.014991+00:00"}
+{"taskName": null, "message": "Casted column 'diabetesMed' to 'category'.", "time": "2024-11-05T22:50:42.019675+00:00"}
+{"taskName": null, "message": "Casted column 'readmitted' to 'category'.", "time": "2024-11-05T22:50:42.022044+00:00"}
+{"taskName": null, "message": "Column 'time_in_hospital' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-05T22:50:42.022044+00:00"}
+{"taskName": null, "message": "Column 'num_lab_procedures' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-05T22:50:42.022044+00:00"}
+{"taskName": null, "message": "Column 'num_procedures' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-05T22:50:42.022044+00:00"}
+{"taskName": null, "message": "Column 'num_medications' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-05T22:50:42.023042+00:00"}
+{"taskName": null, "message": "Column 'number_outpatient' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-05T22:50:42.023042+00:00"}
+{"taskName": null, "message": "Column 'number_emergency' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-05T22:50:42.023042+00:00"}
+{"taskName": null, "message": "Column 'number_inpatient' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-05T22:50:42.023042+00:00"}
+{"taskName": null, "message": "Column 'number_diagnoses' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-05T22:50:42.023042+00:00"}
+{"taskName": null, "message": "Column dtype handling complete.", "time": "2024-11-05T22:50:42.023042+00:00"}
+{"taskName": null, "message": "DataFrame cleaning process completed successfully.", "time": "2024-11-05T22:50:42.024039+00:00"}
+2024-11-05 17:50:42,024 - DataPipeline - INFO - Data cleaning completed.
+{"taskName": null, "message": "Data cleaning completed.", "time": "2024-11-05T22:50:42.024216+00:00"}
+2024-11-05 17:50:42,028 - DataPipeline - INFO - Cleaned data saved at data\processed\df_cleaned.pkl.
+{"taskName": null, "message": "Cleaned data saved at data\\processed\\df_cleaned.pkl.", "time": "2024-11-05T22:50:42.028890+00:00"}
+2024-11-05 17:50:42,036 - DataPipeline - INFO - Loading key file.
+{"taskName": null, "message": "Loading key file.", "time": "2024-11-05T22:50:42.036159+00:00"}
+2024-11-05 17:50:42,039 - DataPipeline - INFO - Key file processed successfully.
+{"taskName": null, "message": "Key file processed successfully.", "time": "2024-11-05T22:50:42.039062+00:00"}
+2024-11-05 17:50:42,039 - DataPipeline - INFO - Data pipeline completed successfully.
+{"taskName": null, "message": "Data pipeline completed successfully.", "time": "2024-11-05T22:50:42.039062+00:00"}
+2024-11-06 09:39:11,997 - DataPipeline - INFO - Data pipeline logging is configured.
+{"taskName": null, "message": "Data pipeline logging is configured.", "time": "2024-11-06T14:39:11.997446+00:00"}
+2024-11-06 09:39:11,997 - DataPipeline - INFO - Starting data pipeline.
+{"taskName": null, "message": "Starting data pipeline.", "time": "2024-11-06T14:39:11.997446+00:00"}
+2024-11-06 09:39:11,997 - DataPipeline - INFO - Loading cleaned data from saved file.
+{"taskName": null, "message": "Loading cleaned data from saved file.", "time": "2024-11-06T14:39:11.997446+00:00"}
+2024-11-06 09:39:12,017 - DataPipeline - INFO - Loading key file.
+{"taskName": null, "message": "Loading key file.", "time": "2024-11-06T14:39:12.017424+00:00"}
+2024-11-06 09:39:12,031 - DataPipeline - INFO - Key file processed successfully.
+{"taskName": null, "message": "Key file processed successfully.", "time": "2024-11-06T14:39:12.031898+00:00"}
+2024-11-06 09:39:12,031 - DataPipeline - INFO - Data pipeline completed successfully.
+{"taskName": null, "message": "Data pipeline completed successfully.", "time": "2024-11-06T14:39:12.031898+00:00"}
+2024-11-06 09:44:09,853 - DataPipeline - INFO - Data pipeline logging is configured.
+{"taskName": null, "message": "Data pipeline logging is configured.", "time": "2024-11-06T14:44:09.854896+00:00"}
+2024-11-06 09:44:09,854 - DataPipeline - INFO - Starting data pipeline.
+{"taskName": null, "message": "Starting data pipeline.", "time": "2024-11-06T14:44:09.854896+00:00"}
+2024-11-06 09:44:09,854 - DataPipeline - INFO - Loading raw data and starting cleaning process.
+{"taskName": null, "message": "Loading raw data and starting cleaning process.", "time": "2024-11-06T14:44:09.854896+00:00"}
+2024-11-06 09:44:10,212 - DataPipeline - INFO - Raw data loaded successfully.
+{"taskName": null, "message": "Raw data loaded successfully.", "time": "2024-11-06T14:44:10.212460+00:00"}
+{"taskName": null, "message": "Starting full DataFrame cleaning process.", "time": "2024-11-06T14:44:10.230425+00:00"}
+{"taskName": null, "message": "Removed columns: ['weight', 'encounter_id', 'patient_nbr']", "time": "2024-11-06T14:44:10.261487+00:00"}
+{"taskName": null, "message": "No missing value handling strategy provided. Missing values are retained.", "time": "2024-11-06T14:44:10.268549+00:00"}
+{"taskName": null, "message": "Applied column-specific remapping to 'A1Cresult': {'Norm': 0, '>7': 1, '>8': 2, 'None': <NA>} and cast to 'Int64'", "time": "2024-11-06T14:44:10.301461+00:00"}
+{"taskName": null, "message": "Applied column-specific remapping to 'max_glu_serum': {'Norm': 0, '>200': 1, '>300': 2, 'None': <NA>} and cast to 'Int64'", "time": "2024-11-06T14:44:10.331382+00:00"}
+{"taskName": null, "message": "Applied column-specific remapping to 'readmitted': {'NO': 0, '<30': 1, '>30': 2} and cast to 'Int64'", "time": "2024-11-06T14:44:10.365392+00:00"}
+{"taskName": null, "message": "Applied global remapping with adjusted values: {'': nan, 'N/A': nan, 'None': nan, 'n/a': nan, 'missing': nan, 'na': nan, 'NA': nan, 'none': nan, 'NAN': nan, 'nan': nan, 'NULL': nan, 'null': nan, '-': nan, '--': nan, '?': nan, 'not available': nan, 'not applicable': nan, 'not specified': nan, 'not known': nan, 'unavailable': nan, 'unknown': nan, 'no data': nan}", "time": "2024-11-06T14:44:11.080206+00:00"}
+{"taskName": null, "message": "Identified string-based numbers.", "time": "2024-11-06T14:44:13.048750+00:00"}
+{"taskName": null, "message": "Number-like string standardization completed.", "time": "2024-11-06T14:44:13.798264+00:00"}
+{"taskName": null, "message": "Word-to-number conversion disabled.", "time": "2024-11-06T14:44:13.798264+00:00"}
+{"taskName": null, "message": "Numerical standardization completed.", "time": "2024-11-06T14:44:14.149478+00:00"}
+{"taskName": null, "message": "No text replacement modes specified. Skipping.", "time": "2024-11-06T14:44:14.200408+00:00"}
+{"taskName": null, "message": "Text standardization completed.", "time": "2024-11-06T14:44:15.371386+00:00"}
+{"taskName": null, "message": "Whitespace handling completed.", "time": "2024-11-06T14:44:19.877677+00:00"}
+{"taskName": null, "message": "Casted column 'race' to 'category'.", "time": "2024-11-06T14:44:19.892638+00:00"}
+{"taskName": null, "message": "Casted column 'gender' to 'category'.", "time": "2024-11-06T14:44:19.897624+00:00"}
+{"taskName": null, "message": "Casted column 'age' to 'category'.", "time": "2024-11-06T14:44:19.902610+00:00"}
+{"taskName": null, "message": "Casted column 'admission_type_id' to 'category'.", "time": "2024-11-06T14:44:19.905603+00:00"}
+{"taskName": null, "message": "Casted column 'discharge_disposition_id' to 'category'.", "time": "2024-11-06T14:44:19.906600+00:00"}
+{"taskName": null, "message": "Casted column 'admission_source_id' to 'category'.", "time": "2024-11-06T14:44:19.908596+00:00"}
+{"taskName": null, "message": "Casted column 'payer_code' to 'category'.", "time": "2024-11-06T14:44:19.918713+00:00"}
+{"taskName": null, "message": "Casted column 'medical_specialty' to 'category'.", "time": "2024-11-06T14:44:19.929684+00:00"}
+{"taskName": null, "message": "Casted column 'diag_1' to 'category'.", "time": "2024-11-06T14:44:19.946639+00:00"}
+{"taskName": null, "message": "Casted column 'diag_2' to 'category'.", "time": "2024-11-06T14:44:19.960603+00:00"}
+{"taskName": null, "message": "Casted column 'diag_3' to 'category'.", "time": "2024-11-06T14:44:19.974646+00:00"}
+{"taskName": null, "message": "Casted column 'max_glu_serum' to 'category'.", "time": "2024-11-06T14:44:19.976642+00:00"}
+{"taskName": null, "message": "Casted column 'A1Cresult' to 'category'.", "time": "2024-11-06T14:44:19.979634+00:00"}
+{"taskName": null, "message": "Casted column 'metformin' to 'category'.", "time": "2024-11-06T14:44:19.985617+00:00"}
+{"taskName": null, "message": "Casted column 'repaglinide' to 'category'.", "time": "2024-11-06T14:44:19.989606+00:00"}
+{"taskName": null, "message": "Casted column 'nateglinide' to 'category'.", "time": "2024-11-06T14:44:19.996588+00:00"}
+{"taskName": null, "message": "Casted column 'chlorpropamide' to 'category'.", "time": "2024-11-06T14:44:20.001574+00:00"}
+{"taskName": null, "message": "Casted column 'glimepiride' to 'category'.", "time": "2024-11-06T14:44:20.006561+00:00"}
+{"taskName": null, "message": "Casted column 'acetohexamide' to 'category'.", "time": "2024-11-06T14:44:20.010550+00:00"}
+{"taskName": null, "message": "Casted column 'glipizide' to 'category'.", "time": "2024-11-06T14:44:20.016534+00:00"}
+{"taskName": null, "message": "Casted column 'glyburide' to 'category'.", "time": "2024-11-06T14:44:20.021521+00:00"}
+{"taskName": null, "message": "Casted column 'tolbutamide' to 'category'.", "time": "2024-11-06T14:44:20.028503+00:00"}
+{"taskName": null, "message": "Casted column 'pioglitazone' to 'category'.", "time": "2024-11-06T14:44:20.034649+00:00"}
+{"taskName": null, "message": "Casted column 'rosiglitazone' to 'category'.", "time": "2024-11-06T14:44:20.039635+00:00"}
+{"taskName": null, "message": "Casted column 'acarbose' to 'category'.", "time": "2024-11-06T14:44:20.044623+00:00"}
+{"taskName": null, "message": "Casted column 'miglitol' to 'category'.", "time": "2024-11-06T14:44:20.052600+00:00"}
+{"taskName": null, "message": "Casted column 'troglitazone' to 'category'.", "time": "2024-11-06T14:44:20.056590+00:00"}
+{"taskName": null, "message": "Casted column 'tolazamide' to 'category'.", "time": "2024-11-06T14:44:20.061578+00:00"}
+{"taskName": null, "message": "Casted column 'examide' to 'category'.", "time": "2024-11-06T14:44:20.068558+00:00"}
+{"taskName": null, "message": "Casted column 'citoglipton' to 'category'.", "time": "2024-11-06T14:44:20.072547+00:00"}
+{"taskName": null, "message": "Casted column 'insulin' to 'category'.", "time": "2024-11-06T14:44:20.079529+00:00"}
+{"taskName": null, "message": "Casted column 'glyburide-metformin' to 'category'.", "time": "2024-11-06T14:44:20.088504+00:00"}
+{"taskName": null, "message": "Casted column 'glipizide-metformin' to 'category'.", "time": "2024-11-06T14:44:20.094490+00:00"}
+{"taskName": null, "message": "Casted column 'glimepiride-pioglitazone' to 'category'.", "time": "2024-11-06T14:44:20.101470+00:00"}
+{"taskName": null, "message": "Casted column 'metformin-rosiglitazone' to 'category'.", "time": "2024-11-06T14:44:20.108451+00:00"}
+{"taskName": null, "message": "Casted column 'metformin-pioglitazone' to 'category'.", "time": "2024-11-06T14:44:20.115432+00:00"}
+{"taskName": null, "message": "Casted column 'change' to 'category'.", "time": "2024-11-06T14:44:20.121417+00:00"}
+{"taskName": null, "message": "Casted column 'diabetesMed' to 'category'.", "time": "2024-11-06T14:44:20.126404+00:00"}
+{"taskName": null, "message": "Casted column 'readmitted' to 'category'.", "time": "2024-11-06T14:44:20.128399+00:00"}
+{"taskName": null, "message": "Column 'time_in_hospital' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:44:20.128399+00:00"}
+{"taskName": null, "message": "Column 'num_lab_procedures' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:44:20.129396+00:00"}
+{"taskName": null, "message": "Column 'num_procedures' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:44:20.129396+00:00"}
+{"taskName": null, "message": "Column 'num_medications' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:44:20.129396+00:00"}
+{"taskName": null, "message": "Column 'number_outpatient' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:44:20.129396+00:00"}
+{"taskName": null, "message": "Column 'number_emergency' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:44:20.129396+00:00"}
+{"taskName": null, "message": "Column 'number_inpatient' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:44:20.130394+00:00"}
+{"taskName": null, "message": "Column 'number_diagnoses' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:44:20.130394+00:00"}
+{"taskName": null, "message": "Column dtype handling complete.", "time": "2024-11-06T14:44:20.130394+00:00"}
+{"taskName": null, "message": "DataFrame cleaning process completed successfully.", "time": "2024-11-06T14:44:20.130394+00:00"}
+2024-11-06 09:44:20,130 - DataPipeline - INFO - Data cleaning completed.
+{"taskName": null, "message": "Data cleaning completed.", "time": "2024-11-06T14:44:20.130394+00:00"}
+2024-11-06 09:44:20,261 - DataPipeline - INFO - Cleaned data saved as pkl and parquet at data\processed\df_cleaned.pkl.
+{"taskName": null, "message": "Cleaned data saved as pkl and parquet at data\\processed\\df_cleaned.pkl.", "time": "2024-11-06T14:44:20.261479+00:00"}
+2024-11-06 09:44:20,269 - DataPipeline - INFO - Loading key file.
+{"taskName": null, "message": "Loading key file.", "time": "2024-11-06T14:44:20.269447+00:00"}
+2024-11-06 09:44:20,273 - DataPipeline - INFO - Key file processed successfully.
+{"taskName": null, "message": "Key file processed successfully.", "time": "2024-11-06T14:44:20.273437+00:00"}
+2024-11-06 09:44:20,273 - DataPipeline - INFO - Data pipeline completed successfully.
+{"taskName": null, "message": "Data pipeline completed successfully.", "time": "2024-11-06T14:44:20.273437+00:00"}
+2024-11-06 09:46:00,769 - DataPipeline - INFO - Data pipeline logging is configured.
+{"taskName": null, "message": "Data pipeline logging is configured.", "time": "2024-11-06T14:46:00.770803+00:00"}
+2024-11-06 09:46:00,770 - DataPipeline - INFO - Starting data pipeline.
+{"taskName": null, "message": "Starting data pipeline.", "time": "2024-11-06T14:46:00.770803+00:00"}
+2024-11-06 09:46:00,770 - DataPipeline - INFO - Loading raw data and starting cleaning process.
+{"taskName": null, "message": "Loading raw data and starting cleaning process.", "time": "2024-11-06T14:46:00.770803+00:00"}
+2024-11-06 09:46:01,115 - DataPipeline - INFO - Raw data loaded successfully.
+{"taskName": null, "message": "Raw data loaded successfully.", "time": "2024-11-06T14:46:01.115384+00:00"}
+{"taskName": null, "message": "Starting full DataFrame cleaning process.", "time": "2024-11-06T14:46:01.130343+00:00"}
+{"taskName": null, "message": "Removed columns: ['weight', 'encounter_id', 'patient_nbr']", "time": "2024-11-06T14:46:01.161261+00:00"}
+{"taskName": null, "message": "No missing value handling strategy provided. Missing values are retained.", "time": "2024-11-06T14:46:01.169317+00:00"}
+{"taskName": null, "message": "Applied column-specific remapping to 'A1Cresult': {'Norm': 0, '>7': 1, '>8': 2, 'None': <NA>} and cast to 'Int64'", "time": "2024-11-06T14:46:01.200234+00:00"}
+{"taskName": null, "message": "Applied column-specific remapping to 'max_glu_serum': {'Norm': 0, '>200': 1, '>300': 2, 'None': <NA>} and cast to 'Int64'", "time": "2024-11-06T14:46:01.224243+00:00"}
+{"taskName": null, "message": "Applied column-specific remapping to 'readmitted': {'NO': 0, '<30': 1, '>30': 2} and cast to 'Int64'", "time": "2024-11-06T14:46:01.253288+00:00"}
+{"taskName": null, "message": "Applied global remapping with adjusted values: {'': nan, 'N/A': nan, 'None': nan, 'n/a': nan, 'missing': nan, 'na': nan, 'NA': nan, 'none': nan, 'NAN': nan, 'nan': nan, 'NULL': nan, 'null': nan, '-': nan, '--': nan, '?': nan, 'not available': nan, 'not applicable': nan, 'not specified': nan, 'not known': nan, 'unavailable': nan, 'unknown': nan, 'no data': nan}", "time": "2024-11-06T14:46:01.913923+00:00"}
+{"taskName": null, "message": "Identified string-based numbers.", "time": "2024-11-06T14:46:03.774589+00:00"}
+{"taskName": null, "message": "Number-like string standardization completed.", "time": "2024-11-06T14:46:04.492540+00:00"}
+{"taskName": null, "message": "Word-to-number conversion disabled.", "time": "2024-11-06T14:46:04.492540+00:00"}
+{"taskName": null, "message": "Numerical standardization completed.", "time": "2024-11-06T14:46:04.851748+00:00"}
+{"taskName": null, "message": "No text replacement modes specified. Skipping.", "time": "2024-11-06T14:46:04.899669+00:00"}
+{"taskName": null, "message": "Text standardization completed.", "time": "2024-11-06T14:46:06.004015+00:00"}
+{"taskName": null, "message": "Whitespace handling completed.", "time": "2024-11-06T14:46:10.431637+00:00"}
+{"taskName": null, "message": "Casted column 'race' to 'category'.", "time": "2024-11-06T14:46:10.444681+00:00"}
+{"taskName": null, "message": "Casted column 'gender' to 'category'.", "time": "2024-11-06T14:46:10.449667+00:00"}
+{"taskName": null, "message": "Casted column 'age' to 'category'.", "time": "2024-11-06T14:46:10.455652+00:00"}
+{"taskName": null, "message": "Casted column 'admission_type_id' to 'category'.", "time": "2024-11-06T14:46:10.456649+00:00"}
+{"taskName": null, "message": "Casted column 'discharge_disposition_id' to 'category'.", "time": "2024-11-06T14:46:10.458644+00:00"}
+{"taskName": null, "message": "Casted column 'admission_source_id' to 'category'.", "time": "2024-11-06T14:46:10.460639+00:00"}
+{"taskName": null, "message": "Casted column 'payer_code' to 'category'.", "time": "2024-11-06T14:46:10.470611+00:00"}
+{"taskName": null, "message": "Casted column 'medical_specialty' to 'category'.", "time": "2024-11-06T14:46:10.482580+00:00"}
+{"taskName": null, "message": "Casted column 'diag_1' to 'category'.", "time": "2024-11-06T14:46:10.496544+00:00"}
+{"taskName": null, "message": "Casted column 'diag_2' to 'category'.", "time": "2024-11-06T14:46:10.512763+00:00"}
+{"taskName": null, "message": "Casted column 'diag_3' to 'category'.", "time": "2024-11-06T14:46:10.525728+00:00"}
+{"taskName": null, "message": "Casted column 'max_glu_serum' to 'category'.", "time": "2024-11-06T14:46:10.528720+00:00"}
+{"taskName": null, "message": "Casted column 'A1Cresult' to 'category'.", "time": "2024-11-06T14:46:10.530715+00:00"}
+{"taskName": null, "message": "Casted column 'metformin' to 'category'.", "time": "2024-11-06T14:46:10.535701+00:00"}
+{"taskName": null, "message": "Casted column 'repaglinide' to 'category'.", "time": "2024-11-06T14:46:10.539690+00:00"}
+{"taskName": null, "message": "Casted column 'nateglinide' to 'category'.", "time": "2024-11-06T14:46:10.544678+00:00"}
+{"taskName": null, "message": "Casted column 'chlorpropamide' to 'category'.", "time": "2024-11-06T14:46:10.551659+00:00"}
+{"taskName": null, "message": "Casted column 'glimepiride' to 'category'.", "time": "2024-11-06T14:46:10.557642+00:00"}
+{"taskName": null, "message": "Casted column 'acetohexamide' to 'category'.", "time": "2024-11-06T14:46:10.562629+00:00"}
+{"taskName": null, "message": "Casted column 'glipizide' to 'category'.", "time": "2024-11-06T14:46:10.570607+00:00"}
+{"taskName": null, "message": "Casted column 'glyburide' to 'category'.", "time": "2024-11-06T14:46:10.575594+00:00"}
+{"taskName": null, "message": "Casted column 'tolbutamide' to 'category'.", "time": "2024-11-06T14:46:10.583575+00:00"}
+{"taskName": null, "message": "Casted column 'pioglitazone' to 'category'.", "time": "2024-11-06T14:46:10.589557+00:00"}
+{"taskName": null, "message": "Casted column 'rosiglitazone' to 'category'.", "time": "2024-11-06T14:46:10.594543+00:00"}
+{"taskName": null, "message": "Casted column 'acarbose' to 'category'.", "time": "2024-11-06T14:46:10.599530+00:00"}
+{"taskName": null, "message": "Casted column 'miglitol' to 'category'.", "time": "2024-11-06T14:46:10.604517+00:00"}
+{"taskName": null, "message": "Casted column 'troglitazone' to 'category'.", "time": "2024-11-06T14:46:10.608506+00:00"}
+{"taskName": null, "message": "Casted column 'tolazamide' to 'category'.", "time": "2024-11-06T14:46:10.616568+00:00"}
+{"taskName": null, "message": "Casted column 'examide' to 'category'.", "time": "2024-11-06T14:46:10.622552+00:00"}
+{"taskName": null, "message": "Casted column 'citoglipton' to 'category'.", "time": "2024-11-06T14:46:10.627538+00:00"}
+{"taskName": null, "message": "Casted column 'insulin' to 'category'.", "time": "2024-11-06T14:46:10.635517+00:00"}
+{"taskName": null, "message": "Casted column 'glyburide-metformin' to 'category'.", "time": "2024-11-06T14:46:10.640503+00:00"}
+{"taskName": null, "message": "Casted column 'glipizide-metformin' to 'category'.", "time": "2024-11-06T14:46:10.646489+00:00"}
+{"taskName": null, "message": "Casted column 'glimepiride-pioglitazone' to 'category'.", "time": "2024-11-06T14:46:10.653469+00:00"}
+{"taskName": null, "message": "Casted column 'metformin-rosiglitazone' to 'category'.", "time": "2024-11-06T14:46:10.658456+00:00"}
+{"taskName": null, "message": "Casted column 'metformin-pioglitazone' to 'category'.", "time": "2024-11-06T14:46:10.665439+00:00"}
+{"taskName": null, "message": "Casted column 'change' to 'category'.", "time": "2024-11-06T14:46:10.671421+00:00"}
+{"taskName": null, "message": "Casted column 'diabetesMed' to 'category'.", "time": "2024-11-06T14:46:10.675411+00:00"}
+{"taskName": null, "message": "Casted column 'readmitted' to 'category'.", "time": "2024-11-06T14:46:10.678403+00:00"}
+{"taskName": null, "message": "Column 'time_in_hospital' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:46:10.678403+00:00"}
+{"taskName": null, "message": "Column 'num_lab_procedures' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:46:10.678403+00:00"}
+{"taskName": null, "message": "Column 'num_procedures' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:46:10.678403+00:00"}
+{"taskName": null, "message": "Column 'num_medications' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:46:10.679401+00:00"}
+{"taskName": null, "message": "Column 'number_outpatient' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:46:10.679401+00:00"}
+{"taskName": null, "message": "Column 'number_emergency' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:46:10.679401+00:00"}
+{"taskName": null, "message": "Column 'number_inpatient' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:46:10.679401+00:00"}
+{"taskName": null, "message": "Column 'number_diagnoses' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:46:10.679401+00:00"}
+{"taskName": null, "message": "Column dtype handling complete.", "time": "2024-11-06T14:46:10.680402+00:00"}
+{"taskName": null, "message": "DataFrame cleaning process completed successfully.", "time": "2024-11-06T14:46:10.680402+00:00"}
+2024-11-06 09:46:10,680 - DataPipeline - INFO - Data cleaning completed.
+{"taskName": null, "message": "Data cleaning completed.", "time": "2024-11-06T14:46:10.680402+00:00"}
+2024-11-06 09:46:10,805 - DataPipeline - INFO - Cleaned data saved as pkl and parquet at data\processed\df_cleaned.pkl.
+{"taskName": null, "message": "Cleaned data saved as pkl and parquet at data\\processed\\df_cleaned.pkl.", "time": "2024-11-06T14:46:10.805331+00:00"}
+2024-11-06 09:46:10,813 - DataPipeline - INFO - Loading key file.
+{"taskName": null, "message": "Loading key file.", "time": "2024-11-06T14:46:10.813310+00:00"}
+2024-11-06 09:46:10,816 - DataPipeline - INFO - Key file processed successfully.
+{"taskName": null, "message": "Key file processed successfully.", "time": "2024-11-06T14:46:10.816304+00:00"}
+2024-11-06 09:46:10,816 - DataPipeline - INFO - Data pipeline completed successfully.
+{"taskName": null, "message": "Data pipeline completed successfully.", "time": "2024-11-06T14:46:10.816304+00:00"}
+2024-11-06 09:46:44,506 - DataPipeline - INFO - Data pipeline logging is configured.
+{"taskName": null, "message": "Data pipeline logging is configured.", "time": "2024-11-06T14:46:44.507046+00:00"}
+2024-11-06 09:46:44,508 - DataPipeline - INFO - Starting data pipeline.
+{"taskName": null, "message": "Starting data pipeline.", "time": "2024-11-06T14:46:44.508043+00:00"}
+2024-11-06 09:46:44,508 - DataPipeline - INFO - Loading raw data and starting cleaning process.
+{"taskName": null, "message": "Loading raw data and starting cleaning process.", "time": "2024-11-06T14:46:44.508043+00:00"}
+2024-11-06 09:46:44,863 - DataPipeline - INFO - Raw data loaded successfully.
+{"taskName": null, "message": "Raw data loaded successfully.", "time": "2024-11-06T14:46:44.863630+00:00"}
+{"taskName": null, "message": "Starting full DataFrame cleaning process.", "time": "2024-11-06T14:46:44.880652+00:00"}
+{"taskName": null, "message": "Removed columns: ['weight', 'encounter_id', 'patient_nbr']", "time": "2024-11-06T14:46:44.919548+00:00"}
+{"taskName": null, "message": "No missing value handling strategy provided. Missing values are retained.", "time": "2024-11-06T14:46:44.929616+00:00"}
+{"taskName": null, "message": "Applied column-specific remapping to 'A1Cresult': {'Norm': 0, '>7': 1, '>8': 2, 'None': <NA>} and cast to 'Int64'", "time": "2024-11-06T14:46:44.970507+00:00"}
+{"taskName": null, "message": "Applied column-specific remapping to 'max_glu_serum': {'Norm': 0, '>200': 1, '>300': 2, 'None': <NA>} and cast to 'Int64'", "time": "2024-11-06T14:46:45.000445+00:00"}
+{"taskName": null, "message": "Applied column-specific remapping to 'readmitted': {'NO': 0, '<30': 1, '>30': 2} and cast to 'Int64'", "time": "2024-11-06T14:46:45.033419+00:00"}
+{"taskName": null, "message": "Applied global remapping with adjusted values: {'': nan, 'N/A': nan, 'None': nan, 'n/a': nan, 'missing': nan, 'na': nan, 'NA': nan, 'none': nan, 'NAN': nan, 'nan': nan, 'NULL': nan, 'null': nan, '-': nan, '--': nan, '?': nan, 'not available': nan, 'not applicable': nan, 'not specified': nan, 'not known': nan, 'unavailable': nan, 'unknown': nan, 'no data': nan}", "time": "2024-11-06T14:46:45.607195+00:00"}
+{"taskName": null, "message": "Identified string-based numbers.", "time": "2024-11-06T14:46:47.390669+00:00"}
+{"taskName": null, "message": "Number-like string standardization completed.", "time": "2024-11-06T14:46:48.055071+00:00"}
+{"taskName": null, "message": "Word-to-number conversion disabled.", "time": "2024-11-06T14:46:48.055071+00:00"}
+{"taskName": null, "message": "Numerical standardization completed.", "time": "2024-11-06T14:46:48.385414+00:00"}
+{"taskName": null, "message": "No text replacement modes specified. Skipping.", "time": "2024-11-06T14:46:48.438665+00:00"}
+{"taskName": null, "message": "Text standardization completed.", "time": "2024-11-06T14:46:49.533850+00:00"}
+{"taskName": null, "message": "Whitespace handling completed.", "time": "2024-11-06T14:46:53.752000+00:00"}
+{"taskName": null, "message": "Casted column 'race' to 'category'.", "time": "2024-11-06T14:46:53.764966+00:00"}
+{"taskName": null, "message": "Casted column 'gender' to 'category'.", "time": "2024-11-06T14:46:53.773077+00:00"}
+{"taskName": null, "message": "Casted column 'age' to 'category'.", "time": "2024-11-06T14:46:53.780058+00:00"}
+{"taskName": null, "message": "Casted column 'admission_type_id' to 'category'.", "time": "2024-11-06T14:46:53.782053+00:00"}
+{"taskName": null, "message": "Casted column 'discharge_disposition_id' to 'category'.", "time": "2024-11-06T14:46:53.783050+00:00"}
+{"taskName": null, "message": "Casted column 'admission_source_id' to 'category'.", "time": "2024-11-06T14:46:53.785045+00:00"}
+{"taskName": null, "message": "Casted column 'payer_code' to 'category'.", "time": "2024-11-06T14:46:53.795094+00:00"}
+{"taskName": null, "message": "Casted column 'medical_specialty' to 'category'.", "time": "2024-11-06T14:46:53.807285+00:00"}
+{"taskName": null, "message": "Casted column 'diag_1' to 'category'.", "time": "2024-11-06T14:46:53.821246+00:00"}
+{"taskName": null, "message": "Casted column 'diag_2' to 'category'.", "time": "2024-11-06T14:46:53.835209+00:00"}
+{"taskName": null, "message": "Casted column 'diag_3' to 'category'.", "time": "2024-11-06T14:46:53.849171+00:00"}
+{"taskName": null, "message": "Casted column 'max_glu_serum' to 'category'.", "time": "2024-11-06T14:46:53.851166+00:00"}
+{"taskName": null, "message": "Casted column 'A1Cresult' to 'category'.", "time": "2024-11-06T14:46:53.853162+00:00"}
+{"taskName": null, "message": "Casted column 'metformin' to 'category'.", "time": "2024-11-06T14:46:53.858148+00:00"}
+{"taskName": null, "message": "Casted column 'repaglinide' to 'category'.", "time": "2024-11-06T14:46:53.863134+00:00"}
+{"taskName": null, "message": "Casted column 'nateglinide' to 'category'.", "time": "2024-11-06T14:46:53.868121+00:00"}
+{"taskName": null, "message": "Casted column 'chlorpropamide' to 'category'.", "time": "2024-11-06T14:46:53.873268+00:00"}
+{"taskName": null, "message": "Casted column 'glimepiride' to 'category'.", "time": "2024-11-06T14:46:53.878254+00:00"}
+{"taskName": null, "message": "Casted column 'acetohexamide' to 'category'.", "time": "2024-11-06T14:46:53.882244+00:00"}
+{"taskName": null, "message": "Casted column 'glipizide' to 'category'.", "time": "2024-11-06T14:46:53.889225+00:00"}
+{"taskName": null, "message": "Casted column 'glyburide' to 'category'.", "time": "2024-11-06T14:46:53.893214+00:00"}
+{"taskName": null, "message": "Casted column 'tolbutamide' to 'category'.", "time": "2024-11-06T14:46:53.898201+00:00"}
+{"taskName": null, "message": "Casted column 'pioglitazone' to 'category'.", "time": "2024-11-06T14:46:53.903188+00:00"}
+{"taskName": null, "message": "Casted column 'rosiglitazone' to 'category'.", "time": "2024-11-06T14:46:53.909171+00:00"}
+{"taskName": null, "message": "Casted column 'acarbose' to 'category'.", "time": "2024-11-06T14:46:53.913161+00:00"}
+{"taskName": null, "message": "Casted column 'miglitol' to 'category'.", "time": "2024-11-06T14:46:53.918148+00:00"}
+{"taskName": null, "message": "Casted column 'troglitazone' to 'category'.", "time": "2024-11-06T14:46:53.923134+00:00"}
+{"taskName": null, "message": "Casted column 'tolazamide' to 'category'.", "time": "2024-11-06T14:46:53.928120+00:00"}
+{"taskName": null, "message": "Casted column 'examide' to 'category'.", "time": "2024-11-06T14:46:53.933108+00:00"}
+{"taskName": null, "message": "Casted column 'citoglipton' to 'category'.", "time": "2024-11-06T14:46:53.938094+00:00"}
+{"taskName": null, "message": "Casted column 'insulin' to 'category'.", "time": "2024-11-06T14:46:53.944156+00:00"}
+{"taskName": null, "message": "Casted column 'glyburide-metformin' to 'category'.", "time": "2024-11-06T14:46:53.948146+00:00"}
+{"taskName": null, "message": "Casted column 'glipizide-metformin' to 'category'.", "time": "2024-11-06T14:46:53.954361+00:00"}
+{"taskName": null, "message": "Casted column 'glimepiride-pioglitazone' to 'category'.", "time": "2024-11-06T14:46:53.959347+00:00"}
+{"taskName": null, "message": "Casted column 'metformin-rosiglitazone' to 'category'.", "time": "2024-11-06T14:46:53.964334+00:00"}
+{"taskName": null, "message": "Casted column 'metformin-pioglitazone' to 'category'.", "time": "2024-11-06T14:46:53.969322+00:00"}
+{"taskName": null, "message": "Casted column 'change' to 'category'.", "time": "2024-11-06T14:46:53.977299+00:00"}
+{"taskName": null, "message": "Casted column 'diabetesMed' to 'category'.", "time": "2024-11-06T14:46:53.981289+00:00"}
+{"taskName": null, "message": "Casted column 'readmitted' to 'category'.", "time": "2024-11-06T14:46:53.982287+00:00"}
+{"taskName": null, "message": "Column 'time_in_hospital' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:46:53.983284+00:00"}
+{"taskName": null, "message": "Column 'num_lab_procedures' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:46:53.983284+00:00"}
+{"taskName": null, "message": "Column 'num_procedures' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:46:53.984281+00:00"}
+{"taskName": null, "message": "Column 'num_medications' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:46:53.985279+00:00"}
+{"taskName": null, "message": "Column 'number_outpatient' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:46:53.985279+00:00"}
+{"taskName": null, "message": "Column 'number_emergency' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:46:53.986277+00:00"}
+{"taskName": null, "message": "Column 'number_inpatient' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:46:53.986277+00:00"}
+{"taskName": null, "message": "Column 'number_diagnoses' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:46:53.986277+00:00"}
+{"taskName": null, "message": "Column dtype handling complete.", "time": "2024-11-06T14:46:53.987273+00:00"}
+{"taskName": null, "message": "DataFrame cleaning process completed successfully.", "time": "2024-11-06T14:46:53.987273+00:00"}
+2024-11-06 09:46:53,987 - DataPipeline - INFO - Data cleaning completed.
+{"taskName": null, "message": "Data cleaning completed.", "time": "2024-11-06T14:46:53.988272+00:00"}
+2024-11-06 09:48:50,528 - DataPipeline - INFO - Data pipeline logging is configured.
+{"taskName": null, "message": "Data pipeline logging is configured.", "time": "2024-11-06T14:48:50.529409+00:00"}
+2024-11-06 09:48:50,529 - DataPipeline - INFO - Starting data pipeline.
+{"taskName": null, "message": "Starting data pipeline.", "time": "2024-11-06T14:48:50.529409+00:00"}
+2024-11-06 09:48:50,530 - DataPipeline - INFO - Loading cleaned data from saved file.
+{"taskName": null, "message": "Loading cleaned data from saved file.", "time": "2024-11-06T14:48:50.530407+00:00"}
+2024-11-06 09:48:50,535 - DataPipeline - ERROR - Failed to load data: A load persistent id instruction was encountered, but no persistent_load function was specified.
+{"taskName": null, "message": "Failed to load data: A load persistent id instruction was encountered, but no persistent_load function was specified.", "time": "2024-11-06T14:48:50.535449+00:00"}
+2024-11-06 09:48:50,535 - DataPipeline - ERROR - Data pipeline failed: A load persistent id instruction was encountered, but no persistent_load function was specified.
+{"taskName": null, "message": "Data pipeline failed: A load persistent id instruction was encountered, but no persistent_load function was specified.", "time": "2024-11-06T14:48:50.535449+00:00"}
+2024-11-06 09:49:15,359 - DataPipeline - INFO - Data pipeline logging is configured.
+{"taskName": null, "message": "Data pipeline logging is configured.", "time": "2024-11-06T14:49:15.360760+00:00"}
+2024-11-06 09:49:15,361 - DataPipeline - INFO - Starting data pipeline.
+{"taskName": null, "message": "Starting data pipeline.", "time": "2024-11-06T14:49:15.361757+00:00"}
+2024-11-06 09:49:15,362 - DataPipeline - INFO - Loading raw data and starting cleaning process.
+{"taskName": null, "message": "Loading raw data and starting cleaning process.", "time": "2024-11-06T14:49:15.362829+00:00"}
+2024-11-06 09:49:15,709 - DataPipeline - INFO - Raw data loaded successfully.
+{"taskName": null, "message": "Raw data loaded successfully.", "time": "2024-11-06T14:49:15.709906+00:00"}
+{"taskName": null, "message": "Starting full DataFrame cleaning process.", "time": "2024-11-06T14:49:15.724957+00:00"}
+{"taskName": null, "message": "Removed columns: ['weight', 'encounter_id', 'patient_nbr']", "time": "2024-11-06T14:49:15.758182+00:00"}
+{"taskName": null, "message": "No missing value handling strategy provided. Missing values are retained.", "time": "2024-11-06T14:49:15.766233+00:00"}
+{"taskName": null, "message": "Applied column-specific remapping to 'A1Cresult': {'Norm': 0, '>7': 1, '>8': 2, 'None': <NA>} and cast to 'Int64'", "time": "2024-11-06T14:49:15.800294+00:00"}
+{"taskName": null, "message": "Applied column-specific remapping to 'max_glu_serum': {'Norm': 0, '>200': 1, '>300': 2, 'None': <NA>} and cast to 'Int64'", "time": "2024-11-06T14:49:15.826389+00:00"}
+{"taskName": null, "message": "Applied column-specific remapping to 'readmitted': {'NO': 0, '<30': 1, '>30': 2} and cast to 'Int64'", "time": "2024-11-06T14:49:15.855365+00:00"}
+{"taskName": null, "message": "Applied global remapping with adjusted values: {'': nan, 'N/A': nan, 'None': nan, 'n/a': nan, 'missing': nan, 'na': nan, 'NA': nan, 'none': nan, 'NAN': nan, 'nan': nan, 'NULL': nan, 'null': nan, '-': nan, '--': nan, '?': nan, 'not available': nan, 'not applicable': nan, 'not specified': nan, 'not known': nan, 'unavailable': nan, 'unknown': nan, 'no data': nan}", "time": "2024-11-06T14:49:16.351991+00:00"}
+{"taskName": null, "message": "Identified string-based numbers.", "time": "2024-11-06T14:49:18.043359+00:00"}
+{"taskName": null, "message": "Number-like string standardization completed.", "time": "2024-11-06T14:49:18.688140+00:00"}
+{"taskName": null, "message": "Word-to-number conversion disabled.", "time": "2024-11-06T14:49:18.689137+00:00"}
+{"taskName": null, "message": "Numerical standardization completed.", "time": "2024-11-06T14:49:19.007132+00:00"}
+{"taskName": null, "message": "No text replacement modes specified. Skipping.", "time": "2024-11-06T14:49:19.062611+00:00"}
+{"taskName": null, "message": "Text standardization completed.", "time": "2024-11-06T14:49:20.121429+00:00"}
+{"taskName": null, "message": "Whitespace handling completed.", "time": "2024-11-06T14:49:24.149023+00:00"}
+{"taskName": null, "message": "Casted column 'race' to 'category'.", "time": "2024-11-06T14:49:24.163045+00:00"}
+{"taskName": null, "message": "Casted column 'gender' to 'category'.", "time": "2024-11-06T14:49:24.168031+00:00"}
+{"taskName": null, "message": "Casted column 'age' to 'category'.", "time": "2024-11-06T14:49:24.175013+00:00"}
+{"taskName": null, "message": "Casted column 'admission_type_id' to 'category'.", "time": "2024-11-06T14:49:24.176010+00:00"}
+{"taskName": null, "message": "Casted column 'discharge_disposition_id' to 'category'.", "time": "2024-11-06T14:49:24.180004+00:00"}
+{"taskName": null, "message": "Casted column 'admission_source_id' to 'category'.", "time": "2024-11-06T14:49:24.181994+00:00"}
+{"taskName": null, "message": "Casted column 'payer_code' to 'category'.", "time": "2024-11-06T14:49:24.192048+00:00"}
+{"taskName": null, "message": "Casted column 'medical_specialty' to 'category'.", "time": "2024-11-06T14:49:24.203091+00:00"}
+{"taskName": null, "message": "Casted column 'diag_1' to 'category'.", "time": "2024-11-06T14:49:24.217128+00:00"}
+{"taskName": null, "message": "Casted column 'diag_2' to 'category'.", "time": "2024-11-06T14:49:24.231091+00:00"}
+{"taskName": null, "message": "Casted column 'diag_3' to 'category'.", "time": "2024-11-06T14:49:24.245155+00:00"}
+{"taskName": null, "message": "Casted column 'max_glu_serum' to 'category'.", "time": "2024-11-06T14:49:24.246152+00:00"}
+{"taskName": null, "message": "Casted column 'A1Cresult' to 'category'.", "time": "2024-11-06T14:49:24.248147+00:00"}
+{"taskName": null, "message": "Casted column 'metformin' to 'category'.", "time": "2024-11-06T14:49:24.252136+00:00"}
+{"taskName": null, "message": "Casted column 'repaglinide' to 'category'.", "time": "2024-11-06T14:49:24.258120+00:00"}
+{"taskName": null, "message": "Casted column 'nateglinide' to 'category'.", "time": "2024-11-06T14:49:24.262109+00:00"}
+{"taskName": null, "message": "Casted column 'chlorpropamide' to 'category'.", "time": "2024-11-06T14:49:24.266098+00:00"}
+{"taskName": null, "message": "Casted column 'glimepiride' to 'category'.", "time": "2024-11-06T14:49:24.271085+00:00"}
+{"taskName": null, "message": "Casted column 'acetohexamide' to 'category'.", "time": "2024-11-06T14:49:24.277070+00:00"}
+{"taskName": null, "message": "Casted column 'glipizide' to 'category'.", "time": "2024-11-06T14:49:24.282056+00:00"}
+{"taskName": null, "message": "Casted column 'glyburide' to 'category'.", "time": "2024-11-06T14:49:24.287043+00:00"}
+{"taskName": null, "message": "Casted column 'tolbutamide' to 'category'.", "time": "2024-11-06T14:49:24.293027+00:00"}
+{"taskName": null, "message": "Casted column 'pioglitazone' to 'category'.", "time": "2024-11-06T14:49:24.298013+00:00"}
+{"taskName": null, "message": "Casted column 'rosiglitazone' to 'category'.", "time": "2024-11-06T14:49:24.303073+00:00"}
+{"taskName": null, "message": "Casted column 'acarbose' to 'category'.", "time": "2024-11-06T14:49:24.307063+00:00"}
+{"taskName": null, "message": "Casted column 'miglitol' to 'category'.", "time": "2024-11-06T14:49:24.313046+00:00"}
+{"taskName": null, "message": "Casted column 'troglitazone' to 'category'.", "time": "2024-11-06T14:49:24.317035+00:00"}
+{"taskName": null, "message": "Casted column 'tolazamide' to 'category'.", "time": "2024-11-06T14:49:24.322022+00:00"}
+{"taskName": null, "message": "Casted column 'examide' to 'category'.", "time": "2024-11-06T14:49:24.327584+00:00"}
+{"taskName": null, "message": "Casted column 'citoglipton' to 'category'.", "time": "2024-11-06T14:49:24.331574+00:00"}
+{"taskName": null, "message": "Casted column 'insulin' to 'category'.", "time": "2024-11-06T14:49:24.337557+00:00"}
+{"taskName": null, "message": "Casted column 'glyburide-metformin' to 'category'.", "time": "2024-11-06T14:49:24.343542+00:00"}
+{"taskName": null, "message": "Casted column 'glipizide-metformin' to 'category'.", "time": "2024-11-06T14:49:24.347531+00:00"}
+{"taskName": null, "message": "Casted column 'glimepiride-pioglitazone' to 'category'.", "time": "2024-11-06T14:49:24.352591+00:00"}
+{"taskName": null, "message": "Casted column 'metformin-rosiglitazone' to 'category'.", "time": "2024-11-06T14:49:24.357577+00:00"}
+{"taskName": null, "message": "Casted column 'metformin-pioglitazone' to 'category'.", "time": "2024-11-06T14:49:24.363562+00:00"}
+{"taskName": null, "message": "Casted column 'change' to 'category'.", "time": "2024-11-06T14:49:24.368547+00:00"}
+{"taskName": null, "message": "Casted column 'diabetesMed' to 'category'.", "time": "2024-11-06T14:49:24.371539+00:00"}
+{"taskName": null, "message": "Casted column 'readmitted' to 'category'.", "time": "2024-11-06T14:49:24.373536+00:00"}
+{"taskName": null, "message": "Column 'time_in_hospital' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:49:24.374532+00:00"}
+{"taskName": null, "message": "Column 'num_lab_procedures' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:49:24.374532+00:00"}
+{"taskName": null, "message": "Column 'num_procedures' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:49:24.375529+00:00"}
+{"taskName": null, "message": "Column 'num_medications' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:49:24.375529+00:00"}
+{"taskName": null, "message": "Column 'number_outpatient' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:49:24.376527+00:00"}
+{"taskName": null, "message": "Column 'number_emergency' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:49:24.376527+00:00"}
+{"taskName": null, "message": "Column 'number_inpatient' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:49:24.377524+00:00"}
+{"taskName": null, "message": "Column 'number_diagnoses' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:49:24.377524+00:00"}
+{"taskName": null, "message": "Column dtype handling complete.", "time": "2024-11-06T14:49:24.377524+00:00"}
+{"taskName": null, "message": "DataFrame cleaning process completed successfully.", "time": "2024-11-06T14:49:24.377524+00:00"}
+2024-11-06 09:49:24,378 - DataPipeline - INFO - Data cleaning completed.
+{"taskName": null, "message": "Data cleaning completed.", "time": "2024-11-06T14:49:24.378521+00:00"}
+2024-11-06 09:59:25,341 - DataPipeline - INFO - Data pipeline logging is configured.
+{"taskName": null, "message": "Data pipeline logging is configured.", "time": "2024-11-06T14:59:25.341211+00:00"}
+2024-11-06 09:59:25,341 - DataPipeline - INFO - Starting data pipeline.
+{"taskName": null, "message": "Starting data pipeline.", "time": "2024-11-06T14:59:25.341211+00:00"}
+2024-11-06 09:59:25,341 - DataPipeline - INFO - Loading raw data and starting cleaning process.
+{"taskName": null, "message": "Loading raw data and starting cleaning process.", "time": "2024-11-06T14:59:25.341211+00:00"}
+2024-11-06 09:59:25,668 - DataPipeline - INFO - Raw data loaded successfully.
+{"taskName": null, "message": "Raw data loaded successfully.", "time": "2024-11-06T14:59:25.668065+00:00"}
+{"taskName": null, "message": "Starting full DataFrame cleaning process.", "time": "2024-11-06T14:59:25.683025+00:00"}
+{"taskName": null, "message": "Removed columns: ['weight', 'encounter_id', 'patient_nbr']", "time": "2024-11-06T14:59:25.711024+00:00"}
+{"taskName": null, "message": "No missing value handling strategy provided. Missing values are retained.", "time": "2024-11-06T14:59:25.720000+00:00"}
+{"taskName": null, "message": "Applied column-specific remapping to 'A1Cresult': {'Norm': 0, '>7': 1, '>8': 2, 'None': <NA>} and cast to 'Int64'", "time": "2024-11-06T14:59:25.749013+00:00"}
+{"taskName": null, "message": "Applied column-specific remapping to 'max_glu_serum': {'Norm': 0, '>200': 1, '>300': 2, 'None': <NA>} and cast to 'Int64'", "time": "2024-11-06T14:59:25.771952+00:00"}
+{"taskName": null, "message": "Applied column-specific remapping to 'readmitted': {'NO': 0, '<30': 1, '>30': 2} and cast to 'Int64'", "time": "2024-11-06T14:59:25.800980+00:00"}
+{"taskName": null, "message": "Applied global remapping with adjusted values: {'': nan, 'N/A': nan, 'None': nan, 'n/a': nan, 'missing': nan, 'na': nan, 'NA': nan, 'none': nan, 'NAN': nan, 'nan': nan, 'NULL': nan, 'null': nan, '-': nan, '--': nan, '?': nan, 'not available': nan, 'not applicable': nan, 'not specified': nan, 'not known': nan, 'unavailable': nan, 'unknown': nan, 'no data': nan}", "time": "2024-11-06T14:59:26.525795+00:00"}
+{"taskName": null, "message": "Identified string-based numbers.", "time": "2024-11-06T14:59:28.199868+00:00"}
+{"taskName": null, "message": "Number-like string standardization completed.", "time": "2024-11-06T14:59:28.853238+00:00"}
+{"taskName": null, "message": "Word-to-number conversion disabled.", "time": "2024-11-06T14:59:28.853238+00:00"}
+{"taskName": null, "message": "Numerical standardization completed.", "time": "2024-11-06T14:59:29.178289+00:00"}
+{"taskName": null, "message": "No text replacement modes specified. Skipping.", "time": "2024-11-06T14:59:29.226229+00:00"}
+{"taskName": null, "message": "Text standardization completed.", "time": "2024-11-06T14:59:30.265352+00:00"}
+{"taskName": null, "message": "Whitespace handling completed.", "time": "2024-11-06T14:59:34.340304+00:00"}
+{"taskName": null, "message": "Casted column 'race' to 'category'.", "time": "2024-11-06T14:59:34.352272+00:00"}
+{"taskName": null, "message": "Casted column 'gender' to 'category'.", "time": "2024-11-06T14:59:34.358256+00:00"}
+{"taskName": null, "message": "Casted column 'age' to 'category'.", "time": "2024-11-06T14:59:34.363242+00:00"}
+{"taskName": null, "message": "Casted column 'admission_type_id' to 'category'.", "time": "2024-11-06T14:59:34.365237+00:00"}
+{"taskName": null, "message": "Casted column 'discharge_disposition_id' to 'category'.", "time": "2024-11-06T14:59:34.366234+00:00"}
+{"taskName": null, "message": "Casted column 'admission_source_id' to 'category'.", "time": "2024-11-06T14:59:34.368229+00:00"}
+{"taskName": null, "message": "Casted column 'payer_code' to 'category'.", "time": "2024-11-06T14:59:34.378202+00:00"}
+{"taskName": null, "message": "Casted column 'medical_specialty' to 'category'.", "time": "2024-11-06T14:59:34.388176+00:00"}
+{"taskName": null, "message": "Casted column 'diag_1' to 'category'.", "time": "2024-11-06T14:59:34.403135+00:00"}
+{"taskName": null, "message": "Casted column 'diag_2' to 'category'.", "time": "2024-11-06T14:59:34.415104+00:00"}
+{"taskName": null, "message": "Casted column 'diag_3' to 'category'.", "time": "2024-11-06T14:59:34.429066+00:00"}
+{"taskName": null, "message": "Casted column 'max_glu_serum' to 'category'.", "time": "2024-11-06T14:59:34.430064+00:00"}
+{"taskName": null, "message": "Casted column 'A1Cresult' to 'category'.", "time": "2024-11-06T14:59:34.432059+00:00"}
+{"taskName": null, "message": "Casted column 'metformin' to 'category'.", "time": "2024-11-06T14:59:34.437045+00:00"}
+{"taskName": null, "message": "Casted column 'repaglinide' to 'category'.", "time": "2024-11-06T14:59:34.444026+00:00"}
+{"taskName": null, "message": "Casted column 'nateglinide' to 'category'.", "time": "2024-11-06T14:59:34.448016+00:00"}
+{"taskName": null, "message": "Casted column 'chlorpropamide' to 'category'.", "time": "2024-11-06T14:59:34.453002+00:00"}
+{"taskName": null, "message": "Casted column 'glimepiride' to 'category'.", "time": "2024-11-06T14:59:34.459984+00:00"}
+{"taskName": null, "message": "Casted column 'acetohexamide' to 'category'.", "time": "2024-11-06T14:59:34.464970+00:00"}
+{"taskName": null, "message": "Casted column 'glipizide' to 'category'.", "time": "2024-11-06T14:59:34.470955+00:00"}
+{"taskName": null, "message": "Casted column 'glyburide' to 'category'.", "time": "2024-11-06T14:59:34.477935+00:00"}
+{"taskName": null, "message": "Casted column 'tolbutamide' to 'category'.", "time": "2024-11-06T14:59:34.482922+00:00"}
+{"taskName": null, "message": "Casted column 'pioglitazone' to 'category'.", "time": "2024-11-06T14:59:34.487909+00:00"}
+{"taskName": null, "message": "Casted column 'rosiglitazone' to 'category'.", "time": "2024-11-06T14:59:34.494890+00:00"}
+{"taskName": null, "message": "Casted column 'acarbose' to 'category'.", "time": "2024-11-06T14:59:34.499877+00:00"}
+{"taskName": null, "message": "Casted column 'miglitol' to 'category'.", "time": "2024-11-06T14:59:34.504864+00:00"}
+{"taskName": null, "message": "Casted column 'troglitazone' to 'category'.", "time": "2024-11-06T14:59:34.511845+00:00"}
+{"taskName": null, "message": "Casted column 'tolazamide' to 'category'.", "time": "2024-11-06T14:59:34.516831+00:00"}
+{"taskName": null, "message": "Casted column 'examide' to 'category'.", "time": "2024-11-06T14:59:34.521819+00:00"}
+{"taskName": null, "message": "Casted column 'citoglipton' to 'category'.", "time": "2024-11-06T14:59:34.528799+00:00"}
+{"taskName": null, "message": "Casted column 'insulin' to 'category'.", "time": "2024-11-06T14:59:34.533786+00:00"}
+{"taskName": null, "message": "Casted column 'glyburide-metformin' to 'category'.", "time": "2024-11-06T14:59:34.540768+00:00"}
+{"taskName": null, "message": "Casted column 'glipizide-metformin' to 'category'.", "time": "2024-11-06T14:59:34.545754+00:00"}
+{"taskName": null, "message": "Casted column 'glimepiride-pioglitazone' to 'category'.", "time": "2024-11-06T14:59:34.550741+00:00"}
+{"taskName": null, "message": "Casted column 'metformin-rosiglitazone' to 'category'.", "time": "2024-11-06T14:59:34.559720+00:00"}
+{"taskName": null, "message": "Casted column 'metformin-pioglitazone' to 'category'.", "time": "2024-11-06T14:59:34.565701+00:00"}
+{"taskName": null, "message": "Casted column 'change' to 'category'.", "time": "2024-11-06T14:59:34.571687+00:00"}
+{"taskName": null, "message": "Casted column 'diabetesMed' to 'category'.", "time": "2024-11-06T14:59:34.600608+00:00"}
+{"taskName": null, "message": "Casted column 'readmitted' to 'category'.", "time": "2024-11-06T14:59:34.603600+00:00"}
+{"taskName": null, "message": "Column 'time_in_hospital' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:59:34.603600+00:00"}
+{"taskName": null, "message": "Column 'num_lab_procedures' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:59:34.603600+00:00"}
+{"taskName": null, "message": "Column 'num_procedures' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:59:34.603600+00:00"}
+{"taskName": null, "message": "Column 'num_medications' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:59:34.604598+00:00"}
+{"taskName": null, "message": "Column 'number_outpatient' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:59:34.604598+00:00"}
+{"taskName": null, "message": "Column 'number_emergency' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:59:34.604598+00:00"}
+{"taskName": null, "message": "Column 'number_inpatient' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:59:34.604598+00:00"}
+{"taskName": null, "message": "Column 'number_diagnoses' dtype 'int64' already aligns with 'integer'. No casting applied.", "time": "2024-11-06T14:59:34.604598+00:00"}
+{"taskName": null, "message": "Column dtype handling complete.", "time": "2024-11-06T14:59:34.604598+00:00"}
+{"taskName": null, "message": "DataFrame cleaning process completed successfully.", "time": "2024-11-06T14:59:34.604598+00:00"}
+2024-11-06 09:59:34,605 - DataPipeline - INFO - Data cleaning completed.
+{"taskName": null, "message": "Data cleaning completed.", "time": "2024-11-06T14:59:34.605595+00:00"}
+2024-11-06 09:59:34,732 - DataPipeline - INFO - Cleaned data saved as pkl and parquet at data\processed\df_cleaned.pkl.
+{"taskName": null, "message": "Cleaned data saved as pkl and parquet at data\\processed\\df_cleaned.pkl.", "time": "2024-11-06T14:59:34.732621+00:00"}
+2024-11-06 09:59:34,739 - DataPipeline - INFO - Loading key file.
+{"taskName": null, "message": "Loading key file.", "time": "2024-11-06T14:59:34.739602+00:00"}
+2024-11-06 09:59:34,743 - DataPipeline - INFO - Key file processed successfully.
+{"taskName": null, "message": "Key file processed successfully.", "time": "2024-11-06T14:59:34.743592+00:00"}
+2024-11-06 09:59:34,743 - DataPipeline - INFO - Data pipeline completed successfully.
+{"taskName": null, "message": "Data pipeline completed successfully.", "time": "2024-11-06T14:59:34.743592+00:00"}
+2024-11-06 10:03:48,400 - DataPipeline - INFO - Data pipeline logging is configured.
+{"taskName": "Task-3", "message": "Data pipeline logging is configured.", "time": "2024-11-06T15:03:48.400312+00:00"}
+2024-11-06 10:03:51,540 - DataPipeline - INFO - Starting data pipeline.
+{"taskName": "Task-3", "message": "Starting data pipeline.", "time": "2024-11-06T15:03:51.541477+00:00"}
+2024-11-06 10:03:51,542 - DataPipeline - INFO - Loading cleaned data from saved file.
+{"taskName": "Task-3", "message": "Loading cleaned data from saved file.", "time": "2024-11-06T15:03:51.542475+00:00"}
+2024-11-06 10:03:51,555 - DataPipeline - ERROR - Failed to load data: read_pickle() got an unexpected keyword argument 'engine'
+{"taskName": "Task-3", "message": "Failed to load data: read_pickle() got an unexpected keyword argument 'engine'", "time": "2024-11-06T15:03:51.555440+00:00"}
+2024-11-06 10:03:51,555 - DataPipeline - ERROR - Data pipeline failed: read_pickle() got an unexpected keyword argument 'engine'
+{"taskName": "Task-3", "message": "Data pipeline failed: read_pickle() got an unexpected keyword argument 'engine'", "time": "2024-11-06T15:03:51.555440+00:00"}
+2024-11-06 10:04:58,445 - DataPipeline - INFO - Data pipeline logging is configured.
+{"taskName": null, "message": "Data pipeline logging is configured.", "time": "2024-11-06T15:04:58.445613+00:00"}
+2024-11-06 10:04:58,445 - DataPipeline - INFO - Starting data pipeline.
+{"taskName": null, "message": "Starting data pipeline.", "time": "2024-11-06T15:04:58.445613+00:00"}
+2024-11-06 10:04:58,445 - DataPipeline - INFO - Loading cleaned data from saved file.
+{"taskName": null, "message": "Loading cleaned data from saved file.", "time": "2024-11-06T15:04:58.445613+00:00"}
+2024-11-06 10:04:58,509 - DataPipeline - INFO - Loading key file.
+{"taskName": null, "message": "Loading key file.", "time": "2024-11-06T15:04:58.509025+00:00"}
+2024-11-06 10:04:58,513 - DataPipeline - INFO - Key file processed successfully.
+{"taskName": null, "message": "Key file processed successfully.", "time": "2024-11-06T15:04:58.513014+00:00"}
+2024-11-06 10:04:58,513 - DataPipeline - INFO - Data pipeline completed successfully.
+{"taskName": null, "message": "Data pipeline completed successfully.", "time": "2024-11-06T15:04:58.513014+00:00"}
+2024-11-06 10:05:22,526 - DataPipeline - INFO - Data pipeline logging is configured.
+{"taskName": "Task-3", "message": "Data pipeline logging is configured.", "time": "2024-11-06T15:05:22.526771+00:00"}
+2024-11-06 10:05:25,599 - DataPipeline - INFO - Starting data pipeline.
+{"taskName": "Task-3", "message": "Starting data pipeline.", "time": "2024-11-06T15:05:25.599256+00:00"}
+2024-11-06 10:05:25,600 - DataPipeline - INFO - Loading cleaned data from saved file.
+{"taskName": "Task-3", "message": "Loading cleaned data from saved file.", "time": "2024-11-06T15:05:25.600253+00:00"}
+2024-11-06 10:05:25,665 - DataPipeline - INFO - Loading key file.
+{"taskName": "Task-3", "message": "Loading key file.", "time": "2024-11-06T15:05:25.665340+00:00"}
+2024-11-06 10:05:25,670 - DataPipeline - INFO - Key file processed successfully.
+{"taskName": "Task-3", "message": "Key file processed successfully.", "time": "2024-11-06T15:05:25.670326+00:00"}
+2024-11-06 10:05:25,670 - DataPipeline - INFO - Data pipeline completed successfully.
+{"taskName": "Task-3", "message": "Data pipeline completed successfully.", "time": "2024-11-06T15:05:25.670326+00:00"}
+2024-11-06 10:06:17,729 - DataPipeline - INFO - Starting data pipeline.
+{"taskName": "Task-3", "message": "Starting data pipeline.", "time": "2024-11-06T15:06:17.730637+00:00"}
+2024-11-06 10:06:17,733 - DataPipeline - INFO - Loading cleaned data from saved file.
+{"taskName": "Task-3", "message": "Loading cleaned data from saved file.", "time": "2024-11-06T15:06:17.733630+00:00"}
+2024-11-06 10:06:17,791 - DataPipeline - INFO - Loading key file.
+{"taskName": "Task-3", "message": "Loading key file.", "time": "2024-11-06T15:06:17.792031+00:00"}
+2024-11-06 10:06:17,808 - DataPipeline - INFO - Key file processed successfully.
+{"taskName": "Task-3", "message": "Key file processed successfully.", "time": "2024-11-06T15:06:17.808986+00:00"}
+2024-11-06 10:06:17,809 - DataPipeline - INFO - Data pipeline completed successfully.
+{"taskName": "Task-3", "message": "Data pipeline completed successfully.", "time": "2024-11-06T15:06:17.809983+00:00"}
+2024-11-06 10:06:40,940 - DataPipeline - INFO - Data pipeline logging is configured.
+{"taskName": "Task-4", "message": "Data pipeline logging is configured.", "time": "2024-11-06T15:06:40.940730+00:00"}
+2024-11-06 10:06:45,069 - DataPipeline - INFO - Data pipeline logging is configured.
+{"taskName": "Task-3", "message": "Data pipeline logging is configured.", "time": "2024-11-06T15:06:45.069463+00:00"}
+2024-11-06 10:06:50,706 - DataPipeline - INFO - Starting data pipeline.
+{"taskName": "Task-3", "message": "Starting data pipeline.", "time": "2024-11-06T15:06:50.707271+00:00"}
+2024-11-06 10:06:50,709 - DataPipeline - INFO - Loading cleaned data from saved file.
+{"taskName": "Task-3", "message": "Loading cleaned data from saved file.", "time": "2024-11-06T15:06:50.710262+00:00"}
+2024-11-06 10:06:50,811 - DataPipeline - INFO - Loading key file.
+{"taskName": "Task-3", "message": "Loading key file.", "time": "2024-11-06T15:06:50.811425+00:00"}
+2024-11-06 10:06:50,830 - DataPipeline - INFO - Key file processed successfully.
+{"taskName": "Task-3", "message": "Key file processed successfully.", "time": "2024-11-06T15:06:50.830501+00:00"}
+2024-11-06 10:06:50,830 - DataPipeline - INFO - Data pipeline completed successfully.
+{"taskName": "Task-3", "message": "Data pipeline completed successfully.", "time": "2024-11-06T15:06:50.831499+00:00"}
+2024-11-06 10:08:29,328 - DataPipeline - INFO - Data pipeline logging is configured.
+{"taskName": "Task-3", "message": "Data pipeline logging is configured.", "time": "2024-11-06T15:08:29.328013+00:00"}
+2024-11-06 10:08:36,692 - DataPipeline - INFO - Starting data pipeline.
+{"taskName": "Task-3", "message": "Starting data pipeline.", "time": "2024-11-06T15:08:36.693118+00:00"}
+2024-11-06 10:08:36,695 - DataPipeline - INFO - Loading cleaned data from saved file.
+{"taskName": "Task-3", "message": "Loading cleaned data from saved file.", "time": "2024-11-06T15:08:36.696109+00:00"}
+2024-11-06 10:09:30,495 - DataPipeline - INFO - Loading key file.
+{"taskName": "Task-3", "message": "Loading key file.", "time": "2024-11-06T15:09:30.495144+00:00"}
+2024-11-06 10:09:30,518 - DataPipeline - INFO - Key file processed successfully.
+{"taskName": "Task-3", "message": "Key file processed successfully.", "time": "2024-11-06T15:09:30.518239+00:00"}
+2024-11-06 10:09:30,519 - DataPipeline - INFO - Data pipeline completed successfully.
+{"taskName": "Task-3", "message": "Data pipeline completed successfully.", "time": "2024-11-06T15:09:30.519236+00:00"}
+2024-11-06 10:09:51,217 - DataPipeline - INFO - Starting data pipeline.
+{"taskName": "Task-3", "message": "Starting data pipeline.", "time": "2024-11-06T15:09:51.218859+00:00"}
+2024-11-06 10:09:51,218 - DataPipeline - INFO - Loading cleaned data from saved file.
+{"taskName": "Task-3", "message": "Loading cleaned data from saved file.", "time": "2024-11-06T15:09:51.219857+00:00"}
+2024-11-06 10:09:51,266 - DataPipeline - INFO - Loading key file.
+{"taskName": "Task-3", "message": "Loading key file.", "time": "2024-11-06T15:09:51.267325+00:00"}
+2024-11-06 10:09:51,271 - DataPipeline - INFO - Key file processed successfully.
+{"taskName": "Task-3", "message": "Key file processed successfully.", "time": "2024-11-06T15:09:51.271314+00:00"}
+2024-11-06 10:09:51,281 - DataPipeline - INFO - Data pipeline completed successfully.
+{"taskName": "Task-3", "message": "Data pipeline completed successfully.", "time": "2024-11-06T15:09:51.281287+00:00"}
+2024-11-06 10:10:04,789 - DataPipeline - INFO - Starting data pipeline.
+{"taskName": "Task-3", "message": "Starting data pipeline.", "time": "2024-11-06T15:10:04.789692+00:00"}
+2024-11-06 10:10:04,791 - DataPipeline - INFO - Loading cleaned data from saved file.
+{"taskName": "Task-3", "message": "Loading cleaned data from saved file.", "time": "2024-11-06T15:10:04.792687+00:00"}
+2024-11-06 10:10:04,864 - DataPipeline - INFO - Loading key file.
+{"taskName": "Task-3", "message": "Loading key file.", "time": "2024-11-06T15:10:04.865770+00:00"}
+2024-11-06 10:10:04,877 - DataPipeline - INFO - Key file processed successfully.
+{"taskName": "Task-3", "message": "Key file processed successfully.", "time": "2024-11-06T15:10:04.877737+00:00"}
+2024-11-06 10:10:04,878 - DataPipeline - INFO - Data pipeline completed successfully.
+{"taskName": "Task-3", "message": "Data pipeline completed successfully.", "time": "2024-11-06T15:10:04.878735+00:00"}
+2024-11-06 10:21:03,365 - DataPipeline - INFO - Data pipeline logging is configured.
+{"taskName": "Task-3", "message": "Data pipeline logging is configured.", "time": "2024-11-06T15:21:03.365671+00:00"}
+2024-11-06 10:21:25,314 - DataPipeline - INFO - Starting data pipeline.
+{"taskName": "Task-3", "message": "Starting data pipeline.", "time": "2024-11-06T15:21:25.315406+00:00"}
+2024-11-06 10:21:46,127 - DataPipeline - INFO - Loading cleaned data from saved file.
+{"taskName": "Task-3", "message": "Loading cleaned data from saved file.", "time": "2024-11-06T15:21:46.127958+00:00"}
+2024-11-06 10:35:51,939 - DataPipeline - INFO - Loading key file.
+{"taskName": "Task-3", "message": "Loading key file.", "time": "2024-11-06T15:35:51.939730+00:00"}
+2024-11-06 10:35:51,957 - DataPipeline - INFO - Key file processed successfully.
+{"taskName": "Task-3", "message": "Key file processed successfully.", "time": "2024-11-06T15:35:51.957757+00:00"}
+2024-11-06 10:35:51,958 - DataPipeline - INFO - Data pipeline completed successfully.
+{"taskName": "Task-3", "message": "Data pipeline completed successfully.", "time": "2024-11-06T15:35:51.958754+00:00"}

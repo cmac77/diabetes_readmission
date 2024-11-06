@@ -1,0 +1,190 @@
+# configs/config_settings.yaml
+
+# File paths
+paths:
+  data_raw: "data/raw/data.csv"
+  data_cleaned: "data/processed/df_cleaned.pkl"
+  key_file: "data/raw/key.csv"
+  results: "results"
+  scripts: "scripts"
+  src: "src"
+  logs: "results/logs"
+
+config_cleaner:
+  remove_columns:
+  - "weight"
+  - "encounter_id"
+  - "patient_nbr"
+  apply_remapping:
+    column_mappings:
+      A1Cresult:
+        "Norm": 0
+        ">7": 1
+        ">8": 2
+        "None": null
+      max_glu_serum: 
+        "Norm": 0
+        ">200": 1
+        ">300": 2
+        "None": null
+      readmitted:
+        "NO": 0
+        "<30": 1
+        ">30": 2
+    global_mappings:
+      "": null
+      "N/A": null
+      "None": null
+      "n/a": null
+      "missing": null
+      "na": null
+      "NA": null
+      "none": null
+      "NAN": null
+      "nan": null
+      "NULL": null
+      "null": null
+      "-": null
+      "--": null
+      "?": null
+      "not available": null
+      "not applicable": null
+      "not specified": null
+      "not known": null
+      "unavailable": null
+      "unknown": null
+      "no data": null
+  handle_missing_values:
+    strategy: null
+    fill_value: null
+  whitespace_handling:
+    mode: "normalize"
+  replace_text:
+    modes: []
+    replacements: [""]
+  standardize_text:
+    modes:
+      - "lowercase"
+      - "unicode"
+  identify_string_numbers:
+    enabled: true
+  standardize_number_strings:
+    modes:
+      - "thousands-separators"
+      - "comma-separators"
+      - "parentheses"
+      - "scientific-notation"
+      - "percent-to-decimal"
+  convert_words_to_numbers:
+    enabled: false
+  standardize_numbers:
+    modes:
+      - "handle_inf"
+    inf_replacement: null
+  column_dtypes:
+    categorical:
+      columns:
+        - race
+        - gender
+        - age
+        - admission_type_id
+        - discharge_disposition_id
+        - admission_source_id
+        - payer_code
+        - medical_specialty
+        - diag_1
+        - diag_2
+        - diag_3
+        - max_glu_serum
+        - A1Cresult
+        - metformin
+        - repaglinide
+        - nateglinide
+        - chlorpropamide
+        - glimepiride
+        - acetohexamide
+        - glipizide
+        - glyburide
+        - tolbutamide
+        - pioglitazone
+        - rosiglitazone
+        - acarbose
+        - miglitol
+        - troglitazone
+        - tolazamide
+        - examide
+        - citoglipton
+        - insulin
+        - glyburide-metformin
+        - glipizide-metformin
+        - glimepiride-pioglitazone
+        - metformin-rosiglitazone
+        - metformin-pioglitazone
+        - change
+        - diabetesMed
+        - readmitted
+      dtype: category
+
+    integer:
+      columns:
+        - time_in_hospital
+        - num_lab_procedures
+        - num_procedures
+        - num_medications
+        - number_outpatient
+        - number_emergency
+        - number_inpatient
+        - number_diagnoses
+      dtype: Int64
+
+    float:
+      columns: []
+      dtype: float64
+
+    boolean:
+      columns: []
+      dtype: boolean
+
+    datetime:
+      columns: []
+      dtype: datetime64[ns]
+
+    string:
+      columns: []
+      dtype: string
+
+    timedelta:
+      columns: []
+      dtype: timedelta64[ns]
+
+    complex:
+      columns: []
+      dtype: complex128
+
+    sparse:
+      columns: []
+      dtype:  # Leave empty to allow for inference, typically `Sparse[int]` or `Sparse[float]`
+
+    period:
+      columns: []
+      dtype:  # Leave empty to allow for inference, e.g., period[M] for monthly intervals
+
+    interval:
+      columns: []
+      dtype:  # Leave empty to infer appropriate interval type (e.g., Interval[int64])
+
+
+# Feature engineering settings
+feature_engineering:
+  categorical_encoding: "one_hot"
+  scaling_method: "standard"
+  imputation_strategy: "mean"
+
+# Model settings
+model:
+  model_type: "LogisticRegression"
+  hyperparameters:
+    penalty: "l2"
+    C: 1.0
+  test_size: 0.2
+  random_state: 42
