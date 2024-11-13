@@ -1,11 +1,15 @@
 ## src/modeling/xgboost_model_pipeline.py
-
 # Summary of Folders and Expected Files
-# This section outlines where outputs and logs will be stored when the pipeline is executed.
-# - results/logs/: Contains model training logs (e.g., model_training.log).
-# - results/models/: Stores the trained model (e.g., model_logistic_regression_xgboost.pkl).
-# - results/reports/: Contains performance reports (e.g., report_logistic_regression_xgboost.txt).
-# - results/figures/: Includes SHAP analysis figures for feature importance and dependence plots.
+    # results/logs/:
+        # model_training.log
+    # results/models/:
+        # model_logistic_regression_xgboost.pkl
+    # results/reports/:
+        # report_logistic_regression_xgboost.txt
+    # results/figures/:
+        # shap_feature_importance_class_X_bar.png (for each class)
+        # shap_feature_impact_class_X_summary.png (for each class)
+        # shap_dependence_plot_feature_Y_class_X.png (for each top feature and class)
 
 #%% Base Imports
 import sys
@@ -13,30 +17,35 @@ from pathlib import Path
 import logging
 import pandas as pd
 import numpy as np
-from sklearn.model_selection import train_test_split, RandomizedSearchCV, StratifiedShuffleSplit
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score, classification_report
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.utils.class_weight import compute_class_weight
+from sklearn.model_selection import StratifiedShuffleSplit
+from sklearn.model_selection import RandomizedSearchCV
+from sklearn.metrics import confusion_matrix
 from imblearn.over_sampling import SMOTE, ADASYN
 from xgboost import XGBClassifier
 from pyprojroot import here
-import cupy as cp  # For GPU acceleration
+import cupy as cp
 import joblib
 import matplotlib.pyplot as plt
+import matplotlib as mpl
 import shap
 import seaborn as sns
 
+
+
+
 #%% Local Imports
-# Setup the root path for project directory
 path_root = Path(here())
 if str(path_root) not in sys.path:
     sys.path.insert(0, str(path_root))
 
 from src.config import load_config
 
-#%% Logging Setup
-# Configure logging to store model training logs
-path_logs = path_root / "results" / "logs"
+#%% Logging Setup (Unchanged)
+path_logs = Path(here()) / "results" / "logs"
 path_logs.mkdir(parents=True, exist_ok=True)
 logging.basicConfig(filename=path_logs / "model_training.log", level=logging.INFO, 
                     format='%(asctime)s - %(levelname)s - %(message)s')
@@ -44,126 +53,101 @@ logging.info("XGBoost Model Pipeline Initialized")
 
 #%% Helper Methods
 def ensure_directory(path):
-    """Ensures the specified directory exists, creating it if necessary."""
+    """Ensures the given directory path exists."""
     path.mkdir(parents=True, exist_ok=True)
 
 def save_figure(figure, path, title):
-    """Saves a figure to the given path and logs the action."""
+    """Saves the given figure to the specified path and logs the action."""
     figure.savefig(path, bbox_inches='tight')
-    plt.close(figure)  # Close figure to prevent memory issues
+    plt.close(figure)
     logging.info(f"{title} saved to {path}")
 
 #%% XGBoost Model Pipeline Class
 class XGBoostMulticlassPipeline:
-    """
-    A pipeline for training, evaluating, and analyzing an XGBoost multiclass model.
-    
-    This class addresses the following target classes:
-    - 0: Patient not readmitted
-    - 1: Patient readmitted in less than 30 days
-    - 2: Patient readmitted in more than 30 days
-    
-    Attributes:
-        use_gpu (bool): Enable GPU acceleration with CuPy if set to True.
-        target_column (str): The name of the target variable in the dataset.
-        hyperparameter_tuning (bool): Whether to perform hyperparameter tuning.
-    """
-    
-    def __init__(self, use_gpu=True, target_column="readmitted", hyperparameter_tuning=False):
-        """Initialize the pipeline with configuration, paths, and model setup."""
-        # Load configurations from the YAML file
+    def __init__(self, use_gpu: bool = True, target_column: str = "readmitted", hyperparameter_tuning: bool = False):
+        # Load configuration
         self.config = load_config()
         self.use_gpu = use_gpu
         self.target_column = target_column
         self.hyperparameter_tuning = hyperparameter_tuning
 
-        # Define paths for storing data and results
-        self.path_root = path_root
+        # Define and set paths as attributes
+        self.path_root = Path(here())
         self.path_data_cleaned = self.path_root / self.config['paths']['data_cleaned']
         self.path_data_transformed = self.path_root / self.config['paths']['data_transformed']
         self.path_models = self.path_root / self.config['paths']['results'] / "models"
         self.path_reports = self.path_root / self.config['paths']['results'] / "reports"
 
-        # Ensure results directories exist
+        # Ensure directories exist
         self.path_models.mkdir(parents=True, exist_ok=True)
         self.path_reports.mkdir(parents=True, exist_ok=True)
 
-        # Configure device for GPU/CPU usage and update model parameters
+        # Set the device based on user preference
         device = 'cuda' if use_gpu else 'cpu'
+
+        # Load XGBoost parameters from configuration
         xgb_params = self.config.get("params_xgboost", {}).copy()
-        xgb_params.pop("hyperparameter_tuning", None)  # Remove tuning params from model config
+        xgb_params.pop("hyperparameter_tuning", None)  # Remove hyperparameter_tuning if it exists
         xgb_params.update({
-            "tree_method": "hist",  # Use histogram-based method for efficient training
-            "enable_categorical": use_gpu,  # Enable categorical handling if using GPU
+            "tree_method": "hist",
+            "enable_categorical": True if use_gpu else False,
             "device": device,
-            "eval_metric": "mlogloss"  # Multi-class log loss metric
+            "eval_metric": "mlogloss"
         })
 
-        # Initialize XGBoost model and feature scaler
+        # Initialize the XGBoost model with parameters from config
         self.model = XGBClassifier(**xgb_params)
         self.scaler = StandardScaler()
         logging.info("Model and Scaler initialized")
 
     def load_data(self):
-        """Load preprocessed data from a pickle file."""
         logging.info("Loading data...")
         return pd.read_pickle(self.path_data_cleaned)
 
     def calculate_class_weights(self, y):
-        """Calculate class weights to handle class imbalance."""
         logging.info("Calculating class weights...")
         classes = np.unique(y)
         weights = compute_class_weight(class_weight='balanced', classes=classes, y=y)
         return dict(zip(classes, weights))
 
     def feature_engineering(self, df, oversampling_method="ADASYN"):
-        """
-        Perform feature engineering and optional class balancing using oversampling methods.
-        
-        Args:
-            df (DataFrame): Input data.
-            oversampling_method (str): The oversampling technique to use ("SMOTE" or "ADASYN").
-        
-        Returns:
-            tuple: Feature matrix and target variable.
-        """
         logging.info("Starting feature engineering...")
-
+        
         # Separate target variable
         if self.target_column in df.columns:
             ser_target = df.pop(self.target_column)
         else:
             raise KeyError(f"Target column '{self.target_column}' not found in DataFrame.")
-
+        
         # Identify numerical and categorical columns
         list_numerical_cols = df.select_dtypes(include=[np.number]).columns.tolist()
         list_categorical_cols = df.select_dtypes(exclude=[np.number]).columns.tolist()
-
-        # Encode categorical features for non-GPU processing
+        
+        # Encode categorical features before creating interactions
         if not self.use_gpu:
             logging.info("Encoding categorical features...")
             for col in list_categorical_cols:
                 df[col] = df[col].astype(str).fillna("missing")
                 encoder = LabelEncoder()
                 df[col] = encoder.fit_transform(df[col])
-
+        
         # Scale numerical features
         df[list_numerical_cols] = self.scaler.fit_transform(df[list_numerical_cols])
 
-        # Create interaction features to capture relationships between predictors
-        logging.info("Creating interaction features...")
+        # Focus on creating interactions with top features
+        logging.info("Creating interaction features with top predictors...")
         df['number_inpatient_x_diabetesMed'] = df['number_inpatient'] * df['diabetesMed']
         df['number_inpatient_x_number_emergency'] = df['number_inpatient'] * df['number_emergency']
         df['number_inpatient_x_change'] = df['number_inpatient'] * df['change']
         df['diabetesMed_x_number_emergency'] = df['diabetesMed'] * df['number_emergency']
 
-        # Apply log transformations to selected features
-        logging.info("Applying log transformations...")
+        # Apply log transformations where appropriate
+        logging.info("Applying log transformations to top features...")
         for col in ['number_inpatient', 'number_emergency', 'time_in_hospital']:
-            if (df[col] > 0).all():  # Ensure values are positive
+            if (df[col] > 0).all():  # Check for positive values before log transformation
                 df[f"log_{col}"] = np.log(df[col])
 
-        # Apply oversampling to balance classes
+        # Apply oversampling method for class balancing
         logging.info(f"Applying {oversampling_method} for class balancing...")
         if oversampling_method == "SMOTE":
             smote = SMOTE(random_state=42)
@@ -172,7 +156,7 @@ class XGBoostMulticlassPipeline:
             adasyn = ADASYN(random_state=42)
             df, ser_target = adasyn.fit_resample(df, ser_target)
         else:
-            raise ValueError("Invalid oversampling method. Use 'SMOTE' or 'ADASYN'.")
+            raise ValueError("Invalid oversampling method. Choose either 'SMOTE' or 'ADASYN'.")
 
         logging.info("Feature engineering complete")
         return df, ser_target

@@ -1,3 +1,24 @@
+"""
+git_tracked_files_tree.py
+
+This script generates a hierarchical, tree-like structure of all files and directories 
+currently tracked by Git, excluding those specified in the .gitignore file. It provides 
+an organized view of the project's file system, which is helpful for reviewing the 
+directory layout or sharing a clean structure of your project with others.
+
+Usage:
+- Ensure you are in the root directory of your Git project.
+- Run the script using Python: `python git_tracked_files_tree.py`
+- The output will display a tree-like structure of tracked files and directories.
+
+Dependencies:
+- Python 3.x
+- subprocess (standard Python library)
+
+Note:
+- The script only shows files tracked by Git, respecting your .gitignore settings.
+- Useful for preparing a clean project view for documentation or sharing purposes.
+"""
 #%%
 import os
 import subprocess
