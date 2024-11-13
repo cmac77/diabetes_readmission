@@ -186,6 +186,7 @@ conda install -r requirements.yaml
 ```markdown
 ├── .gitignore
 ├── LICENSE
+├── README.md
 ├── configs
 │   └── config_settings.yaml
 ├── data
@@ -202,29 +203,11 @@ conda install -r requirements.yaml
 │   ├── .gitkeep
 │   └── variable_information.md
 ├── pytest.ini
+├── requirements.yaml
 ├── results
 │   ├── figures
 │   │   ├── .gitkeep
-│   │   ├── class_2_misclassification_distribution.png
 │   │   ├── confusion_matrix.png
-│   │   ├── shap_dependence_plot_admission_type_id_class_0.png
-│   │   ├── shap_dependence_plot_admission_type_id_class_1.png
-│   │   ├── shap_dependence_plot_admission_type_id_class_2.png
-│   │   ├── shap_dependence_plot_age_class_0.png
-│   │   ├── shap_dependence_plot_age_class_1.png
-│   │   ├── shap_dependence_plot_age_class_2.png
-│   │   ├── shap_dependence_plot_discharge_disposition_id_class_0.png
-│   │   ├── shap_dependence_plot_discharge_disposition_id_class_1.png
-│   │   ├── shap_dependence_plot_discharge_disposition_id_class_2.png
-│   │   ├── shap_dependence_plot_gender_class_0.png
-│   │   ├── shap_dependence_plot_gender_class_1.png
-│   │   ├── shap_dependence_plot_gender_class_2.png
-│   │   ├── shap_dependence_plot_race_class_0.png
-│   │   ├── shap_dependence_plot_race_class_1.png
-│   │   ├── shap_dependence_plot_race_class_2.png
-│   │   ├── shap_feature_impact_class_0_summary.png
-│   │   ├── shap_feature_impact_class_1_summary.png
-│   │   ├── shap_feature_impact_class_2_summary.png
 │   │   ├── shap_feature_importance_class_0_bar.png
 │   │   ├── shap_feature_importance_class_1_bar.png
 │   │   └── shap_feature_importance_class_2_bar.png
