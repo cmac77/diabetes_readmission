@@ -129,20 +129,11 @@ The following table summarizes the performance of the XGBoost multiclass classif
 ## Example Figures
 
 **SHAP Feature Importance for Each Class Outcome**
-<div style="display: flex; justify-content: space-around;">
-    <figure style="text-align: center;">
-        <img src="results/figures/shap_feature_importance_class_0_bar.png" alt="SHAP Feature Importance - Class 0" width="300">
-        <figcaption>Class 0: Not Readmitted</figcaption>
-    </figure>
-    <figure style="text-align: center;">
-        <img src="results/figures/shap_feature_importance_class_1_bar.png" alt="SHAP Feature Importance - Class 1" width="300">
-        <figcaption>Class 1: Readmitted < 30 Days</figcaption>
-    </figure>
-    <figure style="text-align: center;">
-        <img src="results/figures/shap_feature_importance_class_2_bar.png" alt="SHAP Feature Importance - Class 2" width="300">
-        <figcaption>Class 2: Readmitted > 30 Days</figcaption>
-    </figure>
-</div>
+
+| Class 0: Not Readmitted | Class 1: Readmitted < 30 Days | Class 2: Readmitted > 30 Days |
+|:-----------------------:|:-----------------------------:|:-----------------------------:|
+| ![SHAP Feature Importance - Class 0](results/figures/shap_feature_importance_class_0_bar.png) | ![SHAP Feature Importance - Class 1](results/figures/shap_feature_importance_class_1_bar.png) | ![SHAP Feature Importance - Class 2](results/figures/shap_feature_importance_class_2_bar.png) |
+
 
 **Confusion matrix for the XGBoost multiclass classifier applied to the diabetes readmission dataset.**
 ![Confusion Matrix](results/figures/confusion_matrix.png)
