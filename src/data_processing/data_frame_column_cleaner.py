@@ -1,24 +1,32 @@
-# src/data_processing/data_frame_column_cleaner.py
+#%% src/data_processing/data_frame_column_cleaner.py
 
+# Standard library imports
 import logging
 import re
 import unicodedata
+import sys
 from typing import Any, Dict, List, Optional, Literal, Union
+
+# Third-party imports
+import numpy as np
 import pandas as pd
 from pandas._libs.missing import NAType
 from pandas import NaT
-import numpy as np
 from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
-from word2number import w2n  # Ensure this is installed: pip install word2number
+from word2number import w2n
+from pyprojroot import here
 
-# Attempt to import configuration
-try:
-    from src.config import config  # Adjust the import path as necessary
-except ImportError:
-    config = None  # Proceed with default configurations if config is unavailable
+#%% Ensure path_root is added to sys.path
+path_root = here()
+
+if str(path_root) not in sys.path:
+    sys.path.append(str(path_root))
+
+# Local imports
+from src.config import config 
 
 
-# Define a compatible type for fill values, including NAType and NaTType
+#%% Define a compatible type for fill values, including NAType and NaTType
 FillValueType = Union[float, int, str, pd.Timestamp, pd.Timedelta, NAType, type(NaT)]
 
 

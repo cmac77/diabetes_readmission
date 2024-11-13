@@ -4,11 +4,14 @@
 paths:
   data_raw: "data/raw/data.csv"
   data_cleaned: "data/processed/df_cleaned.pkl"
+  data_transformed: "data/processed/df_transformed.pkl"
   key_file: "data/raw/key.csv"
   results: "results"
   scripts: "scripts"
   src: "src"
   logs: "results/logs"
+  tables: "results/tables"
+  figures: "results/figures"
 
 config_cleaner:
   remove_columns:
@@ -174,17 +177,26 @@ config_cleaner:
       dtype:  # Leave empty to infer appropriate interval type (e.g., Interval[int64])
 
 
-# Feature engineering settings
-feature_engineering:
-  categorical_encoding: "one_hot"
-  scaling_method: "standard"
-  imputation_strategy: "mean"
+# XGBoost parameters
+params_xgboost:
+  learning_rate: 0.2
+  max_depth: 7
+  n_estimators: 200
+  subsample: 0.8
+  colsample_bytree: 1.0
+  gamma: 0
+  reg_alpha: 0
+  reg_lambda: 1
+  objective: "multi:softprob"
+  num_class: 3
 
-# Model settings
-model:
-  model_type: "LogisticRegression"
-  hyperparameters:
-    penalty: "l2"
-    C: 1.0
-  test_size: 0.2
-  random_state: 42
+  # Hyperparameter Tuning as a Subsection
+  hyperparameter_tuning:
+    param_grid:
+      learning_rate: [0.1, 0.2, 0.3]
+      max_depth: [3, 5, 7]
+      n_estimators: [100, 200, 300]
+      subsample: [0.8, 1.0]
+    cv: 5
+    scoring: "accuracy"
+    n_iter: 10

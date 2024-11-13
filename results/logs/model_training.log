@@ -1,0 +1,41 @@
+2024-11-13 15:03:57,497 - INFO - XGBoost Model Pipeline Initialized
+2024-11-13 15:03:57,497 - INFO - Executing main pipeline...
+2024-11-13 15:03:57,513 - INFO - Model and Scaler initialized
+2024-11-13 15:03:57,513 - INFO - Loading data...
+2024-11-13 15:03:57,528 - INFO - Starting feature engineering...
+2024-11-13 15:03:57,528 - INFO - Encoding categorical features...
+2024-11-13 15:03:58,623 - INFO - Creating interaction features...
+2024-11-13 15:03:58,627 - INFO - Applying log transformations...
+2024-11-13 15:03:58,627 - INFO - Applying ADASYN for class balancing...
+2024-11-13 15:04:03,897 - INFO - Feature engineering complete
+2024-11-13 15:04:03,897 - INFO - Training model...
+2024-11-13 15:04:03,897 - INFO - Calculating class weights...
+2024-11-13 15:04:08,972 - INFO - Model training complete
+2024-11-13 15:04:09,137 - INFO - Model Accuracy: 0.66
+2024-11-13 15:04:09,137 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.63      0.80      0.71     16454
+           1       0.74      0.73      0.73     16561
+           2       0.60      0.46      0.52     18289
+
+    accuracy                           0.66     51304
+   macro avg       0.65      0.66      0.65     51304
+weighted avg       0.65      0.66      0.65     51304
+
+2024-11-13 15:04:09,137 - INFO - Analyzing misclassifications for class 2...
+2024-11-13 15:04:09,529 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-11-13 15:04:09,534 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-11-13 15:04:09,603 - INFO - Class 2 misclassification analysis complete
+2024-11-13 15:04:09,603 - INFO - Saving outputs...
+2024-11-13 15:04:09,632 - INFO - Model saved to c:\Users\cmac7\Documents\python\cjmac\diabetes_readmission\results\models\model_logistic_regression_xgboost.pkl
+2024-11-13 15:04:09,633 - INFO - Classification report saved to c:\Users\cmac7\Documents\python\cjmac\diabetes_readmission\results\reports\report_logistic_regression_xgboost.txt
+2024-11-13 15:04:09,636 - INFO - Performing SHAP analysis with stratified sampling...
+2024-11-13 15:04:12,289 - INFO - SHAP Feature Importance Bar Plot for Class 0 saved to c:\Users\cmac7\Documents\python\cjmac\diabetes_readmission\results\figures\shap_feature_importance_class_0_bar.png
+2024-11-13 15:04:12,826 - INFO - SHAP Feature Impact Summary Plot for Class 0 saved to c:\Users\cmac7\Documents\python\cjmac\diabetes_readmission\results\figures\shap_feature_impact_class_0_summary.png
+2024-11-13 15:04:13,609 - INFO - SHAP Feature Importance Bar Plot for Class 1 saved to c:\Users\cmac7\Documents\python\cjmac\diabetes_readmission\results\figures\shap_feature_importance_class_1_bar.png
+2024-11-13 15:04:14,181 - INFO - SHAP Feature Impact Summary Plot for Class 1 saved to c:\Users\cmac7\Documents\python\cjmac\diabetes_readmission\results\figures\shap_feature_impact_class_1_summary.png
+2024-11-13 15:04:14,944 - INFO - SHAP Feature Importance Bar Plot for Class 2 saved to c:\Users\cmac7\Documents\python\cjmac\diabetes_readmission\results\figures\shap_feature_importance_class_2_bar.png
+2024-11-13 15:04:15,478 - INFO - SHAP Feature Impact Summary Plot for Class 2 saved to c:\Users\cmac7\Documents\python\cjmac\diabetes_readmission\results\figures\shap_feature_impact_class_2_summary.png
+2024-11-13 15:04:16,162 - INFO - SHAP analysis complete with stratified sampling
+2024-11-13 15:04:16,163 - INFO - Pipeline execution complete
