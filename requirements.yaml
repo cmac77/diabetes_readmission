@@ -1,0 +1,65 @@
+name: diabetes_readmission
+channels:
+  - conda-forge
+dependencies:
+  # Core Python version
+  - python=3.12
+
+  # Data manipulation libraries
+  - numpy
+  - pandas
+
+  # Machine learning and modeling
+  - scikit-learn
+  - imbalanced-learn
+  - shap
+  - xgboost=2.1.2
+  - cupy
+
+  # Data visualization
+  - matplotlib
+  - seaborn
+
+  # Statistical modeling
+  - statsmodels
+
+  # Data processing and utilities
+  - dill
+  - click
+  - pyprojroot
+  - tqdm
+  - fsspec
+  - psutil
+
+  # Logging and JSON formatting
+  - json-log-formatter
+
+  # Interactive environments
+  - ipython
+  - ipykernel
+  - jupyter_client
+  - jupyter_core
+  - matplotlib-inline
+
+  # Development tools
+  - pytest
+  - joblib
+  - wheel
+  - setuptools
+
+  # Performance optimization
+  - intel-openmp
+  - mkl
+  - mkl-service
+  - numba
+  - llvmlite
+
+  # Image processing
+  - pillow
+
+  # System utilities and compression
+  - zlib
+  - lz4-c
+  - brotli
+  - snappy
+  - zstd
